@@ -1,9 +1,16 @@
 #include "shell.h"
 
+void handler(int sig)
+{
+	if (sig == SIGINT)
+		write(1, "\n$ ", 3);
+}
+
 int main(int ac, char **av, char **env)
 {
 	char	*ptr, fd = 0;
 
+	signal(SIGINT, handler);
 	if (ac > 1)
 	{
 		fd = open(av[1], O_WRONLY);
