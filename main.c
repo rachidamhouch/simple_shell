@@ -29,6 +29,7 @@ int main(int ac, char **av, char **env)
 		write(1, "$ ", 2);
 		ptr = va_re(alias(remove_comments(get_next_line(fd))));
 		get_commands(ptr);
+		executing();
 		free(ptr);
 	}
 	return (0);
