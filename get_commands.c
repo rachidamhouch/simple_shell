@@ -21,6 +21,49 @@ void    free_commands(void)
 	global.commands = NULL;
 }
 
+char	*get_path(char *str)
+{
+	char	*ptr = _strdup(str), **paths, *tmp;
+	int		i = 0;
+
+	if (!access(ptr, F_OK))
+		return (ptr);
+	paths = split(env_search("PATH"), ':');
+	while (paths[i])
+	{
+		tmp = _strjoin(_strdup(paths[i]), "/");
+		tmp = _strjoin(tmp, ptr);
+		if (!access(tmp, F_OK))
+		{
+			i = 0;
+			while (paths[i])
+				free(paths[i++]);
+			free(paths);
+			free(ptr);
+			return (tmp);
+		}
+		free(tmp);
+		i++;
+	}
+	i = 0;
+	while (paths[i])
+		free(paths[i++]);
+	free(paths);
+	free(ptr);
+	return (NULL);
+}
+
+void	get_paths(void)
+{
+	command_t	*tmp = global.commands;
+
+	while (tmp)
+	{
+		tmp->path = get_path(tmp->args[0]);
+		tmp = tmp->next;
+	}
+}
+
 void	get_commands(char *ptr)
 {
 	char	    **commands = split(ptr, ';');
@@ -41,4 +84,5 @@ void	get_commands(char *ptr)
 	while (commands[i])
 		free(commands[i++]);
 	free(commands);
+	get_paths();
 }
