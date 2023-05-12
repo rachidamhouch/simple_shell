@@ -6,7 +6,7 @@
 /*   By: ramhouch <ramhouch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 01:15:28 by ramhouch          #+#    #+#             */
-/*   Updated: 2023/05/11 15:47:24 by ramhouch         ###   ########.fr       */
+/*   Updated: 2023/05/12 20:55:52 by ramhouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ void	init_env(char **envp)
 		i++;
 	}
 	global.env = head;
+	global.commands = NULL;
 	global.exit_code = 0;
 	global.pid = getpid();
 	global.alias = NULL;

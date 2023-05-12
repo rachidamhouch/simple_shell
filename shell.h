@@ -94,4 +94,5 @@ char	*alias(char *ptr);
 char	*_strjoin(char *s1, char *s2);
 char	*_itoa(int n);
 char    *va_re(char *ptr);
+void	get_commands(char *ptr);
 #endif
