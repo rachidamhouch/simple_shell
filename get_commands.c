@@ -66,11 +66,14 @@ void	get_paths(void)
 
 void	get_commands(char *ptr)
 {
-	char	    **commands = split(ptr, ';');
+	char	    **commands;
 	int         i = 0;
 	command_t   *node;
 
 	free_commands();
+	if (!ptr)
+		return;
+	commands = split(ptr, ';');
 	while (commands[i])
 	{
 		node = malloc(sizeof(command_t));

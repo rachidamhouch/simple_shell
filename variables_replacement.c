@@ -1,10 +1,12 @@
 #include "shell.h"
 
-char *va_re(char *ptr)
+char	*va_re(char *ptr)
 {
 	char	*str = NULL, *tmp;
 	int		i = 0, m = 0;
 
+	if (!ptr)
+		return (NULL);
 	while(ptr[i])
 	{
 		if (!_strncmp(ptr + i, "$$", 2) || !_strncmp(ptr + i, "$?", 2))
