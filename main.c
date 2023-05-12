@@ -17,7 +17,7 @@ int main(int ac, char **av, char **env)
 		if (fd == -1)
 		{
 			write(2, av[0], _strlen(av[0]));
-			write(2, ": 0: Can't open ", _strlen(": 0: Can't open "));
+			write(2, ": Can't open ", _strlen(": Can't open "));
 			write(2, av[1], _strlen(av[1]));
 			write(2, "\n", 1);
 			return (1);
@@ -27,7 +27,9 @@ int main(int ac, char **av, char **env)
 	while (1)
 	{
 		write(1, "$ ", 2);
-		ptr = alias(remove_comments(get_next_line(fd)));
+		ptr = va_re(alias(remove_comments(get_next_line(fd))));
+		write(1, ptr, _strlen(ptr));
+		write(1, "\n", 1);
 		free(ptr);
 	}
 	return (0);
