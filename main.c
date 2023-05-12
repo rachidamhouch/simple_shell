@@ -23,6 +23,7 @@ int main(int ac, char **av, char **env)
 			return (1);
 		}
 	}
+	global.name = av[0];
 	init_env(env);
 	while (1)
 	{

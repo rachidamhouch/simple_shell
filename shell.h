@@ -70,6 +70,7 @@ typedef struct global_s
     alias_t     *alias;
     int		    exit_code;
     pid_t       pid;
+    char        *name;
 } global_t;
 
 global_t	global;
