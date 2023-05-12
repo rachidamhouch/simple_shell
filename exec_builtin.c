@@ -8,32 +8,32 @@ int	exec_builtin(char **args)
 		return (0);
 	else if (!_strncmp("env", cmd, _strlen("env") + 1))
 	{
-		write(1, "built in: env\n", _strlen("built in: env\n"));
+		write(1, "env: built in\n", _strlen("env: built in\n"));
 		return (1);
 	}
 	else if (!_strncmp("cd", cmd, _strlen("cd") + 1))
 	{
-		write(1, "built in: cd\n", _strlen("built in: cd\n"));
+		write(1, "cd: built in\n", _strlen("cd: built in\n"));
 		return (1);
 	}
 	else if (!_strncmp("exit", cmd, _strlen("exit") + 1))
 	{
-		write(1, "built in: exit\n", _strlen("built in: exit\n"));
+		write(1, "exit: built in\n", _strlen("exit: built in\n"));
 		return (1);
 	}
 	else if (!_strncmp("setenv", cmd, _strlen("setenv") + 1))
 	{
-		write(1, "built in: setenv\n", _strlen("built in: setenv\n"));
+		write(1, "setenv: built in\n", _strlen("setenv: built in\n"));
 		return (1);
 	}
 	else if (!_strncmp("unsetenv", cmd, _strlen("unsetenv") + 1))
 	{
-		write(1, "built in: unsetenv\n", _strlen("built in: unsetenv\n"));
+		write(1, "unsetenv: built in\n", _strlen("unsetenv: built in\n"));
 		return (1);
 	}
 	else if (!_strncmp("alias", cmd, _strlen("alias") + 1))
 	{
-		write(1, "built in: alias\n", _strlen("built in: alias\n"));
+		write(1, "alias: built in\n", _strlen("alias: built in\n"));
 		return (1);
 	}
 	return (0);
