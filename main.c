@@ -13,7 +13,7 @@ int main(int ac, char **av, char **env)
 	signal(SIGINT, handler);
 	if (ac > 1)
 	{
-		fd = open(av[1], O_WRONLY);
+		fd = open(av[1], O_RDONLY);
 		if (fd == -1)
 		{
 			write(2, av[0], _strlen(av[0]));
@@ -26,8 +26,9 @@ int main(int ac, char **av, char **env)
 	init_env(env);
 	while (1)
 	{
-		write(1, "$ ", 2);
-		ptr = va_re(alias(remove_comments(get_next_line(fd))));
+		if (!fd)
+			write(1, "$ ", 2);
+		ptr = va_re(alias(remove_comments(get_next_line(fd), fd)));
 		get_commands(ptr);
 		executing();
 		free(ptr);

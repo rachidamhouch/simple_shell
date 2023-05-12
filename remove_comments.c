@@ -1,13 +1,14 @@
 #include "shell.h"
 
-char *remove_comments(char *ptr)
+char *remove_comments(char *ptr, int fd)
 {
 	int len = 0, i = 0;
 	char    *str;
 
 	if (!ptr)
 	{
-		write(1, "exit\n", 5);
+		if (!fd)
+			write(1, "exit\n", 5);
 		exit(0);
 	}
 	while (ptr[len] && ptr[len] != '#' && ptr[len] != '\n')
