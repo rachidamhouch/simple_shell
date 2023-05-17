@@ -1,5 +1,8 @@
 #include "shell.h"
-
+/**
+ *free_commands - Free the memory allocated for command structures
+ *
+ */
 void    free_commands(void)
 {
 	command_t	*tmp = global.commands, *tmp2;
@@ -21,6 +24,20 @@ void    free_commands(void)
 	global.commands = NULL;
 }
 
+
+
+
+
+
+/**
+ *get_path - Get the full path of a command
+ *
+ *@str: The command name
+ *
+ *
+ *Return: The full path of the command, or NULL if not found
+ *
+ */
 char	*get_path(char *str)
 {
 	char	*ptr = _strdup(str), **paths, *tmp;
@@ -53,6 +70,15 @@ char	*get_path(char *str)
 	return (NULL);
 }
 
+
+
+
+
+/**
+ *get_paths - Get the full paths of commands in the command list
+ *
+ *
+ */
 void	get_paths(void)
 {
 	command_t	*tmp = global.commands;
@@ -64,6 +90,16 @@ void	get_paths(void)
 	}
 }
 
+
+
+
+/**
+ *
+ *
+ *get_commands - Parse and store the commands from a string
+ *
+ *@ptr: The input string containing commands
+ */
 void	get_commands(char *ptr)
 {
 	char	    **commands;
