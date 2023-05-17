@@ -8,7 +8,7 @@ int	exec_builtin(char **args)
 		return (0);
 	else if (!_strncmp("env", cmd, _strlen("env") + 1))
 	{
-		write(1, "env: built in\n", _strlen("env: built in\n"));
+		env(args);
 		return (1);
 	}
 	else if (!_strncmp("cd", cmd, _strlen("cd") + 1))
