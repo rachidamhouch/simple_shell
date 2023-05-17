@@ -1,5 +1,14 @@
 #include "shell.h"
 
+/**
+ *exec_binary - Execute binary command
+ *@command: Pointer to the command structure
+ *
+ *Description: Executes the binary command specified
+ *
+ *
+ */
+
 void	exec_binary(command_t *command)
 {
 	pid_t	n;
@@ -28,6 +37,19 @@ void	exec_binary(command_t *command)
 		}
 	}
 }
+
+
+
+
+
+/**
+ *executing - Execute commands
+ *
+ *Description: Executes the commands stored
+ *
+ *
+ *
+ */
 
 void	executing(void)
 {
