@@ -2,5 +2,10 @@
 
 void env(char **cmd)
 {
-    (void)cmd;
+	char **cmd = environ;
+	while (*cmd != NULL)
+	{
+        printf("%s\n", *cmd);
+        cmd++;
+	}
 }
