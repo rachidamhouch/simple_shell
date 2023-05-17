@@ -95,6 +95,15 @@ static char	*ft_word_grep(char const *str, char charset)
 	return (word);
 }
 
+
+/**
+ *split - string array of substrings based on a delimiter
+ *@s: The input string
+ *@c: The delimiter character
+ *
+ *Return: An array of pointers to the substrings
+ */
+
 char	**split(char const *s, char c)
 {
 	int			i;
