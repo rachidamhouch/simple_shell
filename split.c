@@ -64,6 +64,17 @@ static int	ft_word_len(char const *str, char charset)
 	return (i);
 }
 
+
+
+
+/**
+ *ft_word_grep - Extracts a word from a string
+ *@str: The input string
+ *@charset: character used as a separator between words
+ *
+ *Return: pointer to the extracted word
+ */
+
 static char	*ft_word_grep(char const *str, char charset)
 {
 	int		len_w;
