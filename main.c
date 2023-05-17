@@ -1,10 +1,25 @@
 #include "shell.h"
+/**
+ *handler - Signal handler for SIGINT
+ *@sig: The signal number
+ *
+ */
 
 void handler(int sig)
 {
 	if (sig == SIGINT)
 		write(1, "\n$ ", 3);
 }
+
+/**
+ *main - Entry point of the program
+ *@ac: The number of arguments
+ *@av: Array of argument strings
+ *@env: Array of environment string
+ *
+ * Return:0 always
+ */
+
 
 int main(int ac, char **av, char **env)
 {
