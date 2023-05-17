@@ -44,6 +44,16 @@ static int	ft_count_words(char const *str, char charset)
 	return (nbr_w);
 }
 
+
+/**
+ *ft_word_len - calculate the lenth of word in a string
+ *@str: The input string
+ *@charset: character used as a separator between words
+ *
+ *
+ *Return: The length of the word
+ */
+
 static int	ft_word_len(char const *str, char charset)
 {
 	int	i;
