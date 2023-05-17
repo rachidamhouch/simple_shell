@@ -4,7 +4,7 @@
  *@s1:The first string
  *@s2:The second string
  *@n:the maximum number of characters to compare
- *Return: test
+ *Return:integer equalto,less than or greater than
  */
 int	_strncmp(const char *s1, const char *s2, size_t n)
 {
