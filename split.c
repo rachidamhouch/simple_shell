@@ -1,5 +1,10 @@
 #include "shell.h"
-
+/**
+ *m_error - Frees memory for given array
+ *@arr: the array to free
+ *
+ *Return:NULL
+ */
 static char	**m_error(char	**arr)
 {
 	unsigned int	i;
@@ -10,6 +15,15 @@ static char	**m_error(char	**arr)
 	free(arr);
 	return (NULL);
 }
+
+
+/**
+ *ft_count_words - Counts the number of words in a string
+ *@str: The input string
+ *@charset: The character used as a separator between words
+ *
+ *Return: The number of words
+ */
 
 static int	ft_count_words(char const *str, char charset)
 {
