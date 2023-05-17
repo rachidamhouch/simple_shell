@@ -2,5 +2,5 @@
 
 void cd(char **cmd)
 {
-
+    (void)cmd;
 }

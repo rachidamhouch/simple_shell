@@ -1,6 +1,6 @@
 #include "shell.h"
 
-void _exit(char **cmd)
+void my_exit(char **cmd)
 {
-
+    (void)cmd;
 }

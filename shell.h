@@ -102,5 +102,5 @@ void	executing(void);
 int     print_error(char *cmd, char *msg);
 void    env(char **cmd);
 void    cd(char **cmd);
-void    _exit(char **cmd);
+void    my_exit(char **cmd);
 #endif

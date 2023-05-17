@@ -18,7 +18,7 @@ int	exec_builtin(char **args)
 	}
 	else if (!_strncmp("exit", cmd, _strlen("exit") + 1))
 	{
-		_exit(args);
+		my_exit(args);
 		return (1);
 	}
 	else if (!_strncmp("setenv", cmd, _strlen("setenv") + 1))

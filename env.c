@@ -2,5 +2,5 @@
 
 void env(char **cmd)
 {
-
+    (void)cmd;
 }
