@@ -1,5 +1,11 @@
 #include "shell.h"
-
+/**
+ *_strncmp - Compares two strings 
+ *@s1:The first string
+ *@s2:The second string
+ *@n:the maximum number of characters to compare
+ *Return: test
+ */
 int	_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;

@@ -9,7 +9,13 @@
 /*   Updated: 2023/05/11 16:51:42 by ramhouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/**
+ *_strjoin - Concatenates two strings
+ *@s1:The first string
+ *@s2:The second string
+ *
+ *Return: A pointer to the concatenated string
+ */
 #include "shell.h"
 
 char	*_strjoin(char *s1, char *s2)

@@ -1,5 +1,11 @@
 #include "shell.h"
-
+/**
+ * alias_search - Implements the "alias" builtin command
+ * @str: Pointer to  struct with the shell state and args.
+ *
+ * This function defines new aliases in the shell
+ * prints all existing aliases in the shell
+ */
 char	*alias_search(char	*str)
 {
 	alias_t	*ptr;
