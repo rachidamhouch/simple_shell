@@ -35,6 +35,17 @@ void	lstadd_back_env(env_t **lst, env_t *new)
 	else
 		*lst = new;
 }
+
+
+
+
+/**
+ *lstadd_back_command - Add a new element to the end of a command list
+ *
+ *@lst: Pointer to the head of the command list
+ *
+ *@new: New element to be added
+ */
 void	lstadd_back_command(command_t **lst, command_t *new)
 {
 	command_t	*item;
@@ -52,6 +63,15 @@ void	lstadd_back_command(command_t **lst, command_t *new)
 		*lst = new;
 }
 
+
+/**
+ *lstadd_back_alias - Add a new element to the end of an alias list
+ *
+ *@lst: Pointer to the head of the alias list
+ *
+ *@new: New element to be added
+ *
+ */
 void	lstadd_back_alias(alias_t **lst, alias_t *new)
 {
 	alias_t	*item;
