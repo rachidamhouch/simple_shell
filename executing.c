@@ -2,13 +2,10 @@
 
 void	exec_binary(command_t *command)
 {
-	write(1, command->args[0], _strlen(command->args[0]));
-	write(1, ": ", 2);
-	if (command->path)
-		write(1, command->path, _strlen(command->path));
-	else
-		write(1, "command not found", _strlen("command not found"));
-	write(1, "\n", 1);
+	if (!command->path)
+		print_error(command->args[0], "command not found");
+	else if(access("command->path", X_OK))
+		print_error(command->args[0], "Permission denied");
 }
 
 void	executing(void)

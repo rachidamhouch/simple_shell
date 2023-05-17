@@ -98,4 +98,5 @@ char    *va_re(char *ptr);
 void	get_commands(char *ptr);
 int     exec_builtin(char **args);
 void	executing(void);
+int     print_error(char *cmd, char *msg);
 #endif
