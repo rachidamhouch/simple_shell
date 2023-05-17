@@ -1,5 +1,13 @@
 #include "shell.h"
 
+/**
+ *remove_comments - Removes comments from a string
+ *@ptr: The input string
+ *@fd: The file descriptor
+ *
+ *Return: pointer to  modified string
+ */
+
 char *remove_comments(char *ptr, int fd)
 {
 	int len = 0, i = 0;
