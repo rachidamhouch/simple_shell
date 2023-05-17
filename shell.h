@@ -71,6 +71,7 @@ typedef struct global_s
     int		    exit_code;
     pid_t       pid;
     char        *name;
+    char        **envp;
 } global_t;
 
 global_t	global;
