@@ -12,7 +12,13 @@
 
 #include "shell.h"
 
-
+/**
+ *lstadd_back_env - Add a new element to the end of an environment list
+ *
+ *@lst: Pointer to the head of the environment list
+ *@new: New element to be added
+ *
+ */
 void	lstadd_back_env(env_t **lst, env_t *new)
 {
 	env_t	*item;
