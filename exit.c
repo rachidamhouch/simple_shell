@@ -9,10 +9,3 @@
  * Return: Void
  */
 
-void my_exit(char **args ; char *line , char **cmd )
-{
-	free(args);
-	free(line);
-	(void)cmd;
-	exit(0);
-}
