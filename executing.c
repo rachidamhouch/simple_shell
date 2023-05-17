@@ -4,7 +4,7 @@ void	exec_binary(command_t *command)
 {
 	if (!command->path)
 		print_error(command->args[0], "command not found");
-	else if(!access("command->path", X_OK))
+	else if(access(command->path, X_OK))
 		print_error(command->args[0], "Permission denied");
 }
 
