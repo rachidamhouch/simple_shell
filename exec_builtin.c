@@ -13,12 +13,12 @@ int	exec_builtin(char **args)
 	}
 	else if (!_strncmp("cd", cmd, _strlen("cd") + 1))
 	{
-		write(1, "cd: built in\n", _strlen("cd: built in\n"));
+		cd(args);
 		return (1);
 	}
 	else if (!_strncmp("exit", cmd, _strlen("exit") + 1))
 	{
-		write(1, "exit: built in\n", _strlen("exit: built in\n"));
+		_exit(args);
 		return (1);
 	}
 	else if (!_strncmp("setenv", cmd, _strlen("setenv") + 1))

@@ -101,4 +101,6 @@ int     exec_builtin(char **args);
 void	executing(void);
 int     print_error(char *cmd, char *msg);
 void    env(char **cmd);
+void    cd(char **cmd);
+void    _exit(char **cmd);
 #endif
