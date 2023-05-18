@@ -1,9 +1,9 @@
 #include "shell.h"
 /**
- * alias_search - Implements the "alias" builtin command
- * @str: Pointer to  struct with the shell state and args.
- * This function defines new aliases in the shell
- * prints all existing aliases in the shell
+ * alias_search - search for an alias.
+ * @str: arg 1.
+ * @global: arg 2.
+ * Return: string or NULL.
  */
 char	*alias_search(char	*str, global_t *global)
 {
@@ -19,6 +19,12 @@ char	*alias_search(char	*str, global_t *global)
 	return (0);
 }
 
+/**
+ * alias - Implements the alias built-in.
+ * @ptr: arg 1.
+ * @global: arg 2.
+ * Return: string or NULL.
+ */
 char	*alias(char *ptr, global_t *global)
 {
 	int	i = 0;

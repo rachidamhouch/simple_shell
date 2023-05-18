@@ -1,11 +1,11 @@
 #include "shell.h"
 
 /**
- *_strncmp - Compares two strings 
+ *_strncmp - Compares two strings.
  *@s1: arg 1.
  *@s2: arg 2.
  *@n: arg 3.
- *Return:integer equalto,less than or greater than
+ *Return: 0 if equal.
  */
 int	_strncmp(const char *s1, const char *s2, size_t n)
 {

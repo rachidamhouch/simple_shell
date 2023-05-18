@@ -1,12 +1,9 @@
 #include "shell.h"
 
 /**
-*exec_builtin - Execute built-in command
-*@args: Array of command arguments
-*Description: Executes the built-in command specified by the arguments.
-* Handles each built-in command separately and returns 1 if
-* the command is a built-in, or 0 if it is not.
-* Return: 1 if the command is a built-in or  0 
+*exec_builtin - run built-in command.
+*@args: arg 1.
+* Return: 1 if the command is a built-in.
 */
 int	exec_builtin(char **args)
 {

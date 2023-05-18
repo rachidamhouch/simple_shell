@@ -1,9 +1,11 @@
 #include "shell.h"
+
 /**
- * my_memcpy - Copy memory area
+ * my_memcpy - Copy memory area.
  * @dst: arg 1.
  * @src: arg 2.
  * @n: arg 3.
+ * Return: Pointer.
  */
 void	*my_memcpy(void *dst, const void *src, size_t n)
 {
@@ -23,9 +25,9 @@ void	*my_memcpy(void *dst, const void *src, size_t n)
 }
 
 /**
- * my_strlen - Calculate the length of a string
+ * my_strlen - Calculate the length.
  * @s: arg 1.
- * Return: The length of the string
+ * Return: The length.
  */
 size_t	my_strlen(const char *s)
 {
@@ -38,10 +40,10 @@ size_t	my_strlen(const char *s)
 }
 
 /**
- * my_strjoin - Concatenate two strings
+ * my_strjoin - join two strings
  * @s1: arg 1.
  * @s2: arg 2.
- * Return: Pointer to the concatenated string, or NULL on failure
+ * Return: Pointer to the concatenated string.
  */
 char	*my_strjoin(char *s1, char *s2)
 {
@@ -72,10 +74,10 @@ char	*my_strjoin(char *s1, char *s2)
 }
 
 /**
- * my_strchr - Locate first occurrence of a character in a string
+ * my_strchr - locate first occurrence of a character.
  * @s: arg 1.
  * @c: arg 2.
- * Return NULL
+ * Return: Pointer or NULL.
  */
 char	*my_strchr(const char *s, int c)
 {

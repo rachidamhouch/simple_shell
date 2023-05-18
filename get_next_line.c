@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
- * all - Read from file descriptor and concatenate lines
+ * all - Read from fd.
  * @fd: arg 1.
  * @left: arg 2.
  * Return: The concatenated string
@@ -30,7 +30,7 @@ static char	*all(int fd, char *left)
 }
 
 /**
- * get_line - Extract a line from a string
+ * get_line - Extract one line.
  * @line: arg 1.
  * Return: The extracted line
  */
@@ -61,7 +61,7 @@ static char	*get_line(char *line)
 }
 
 /**
- * ft_left - Extract the remaining part of the string after the newline character
+ * ft_left - Extract the remaining part of the string.
  * @line: arg 1.
  * Return: The remaining part of the string
  */
@@ -86,9 +86,10 @@ static char	*ft_left(char *line)
 }
 
 /**
- * get_next_line - Read a line from a file descriptor
+ * get_next_line - Read a line from fd.
  * @fd: arg 1.
- * Return: The next line from the file descriptor, or NULL on failure or end of file
+ * Return: The next line from the file descriptor,
+ * or NULL on failure or end of file.
  */
 char	*get_next_line(int fd)
 {

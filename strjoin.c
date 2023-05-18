@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
- *_strjoin - Concatenates two strings
+ *_strjoin - concatenates two strings.
  *@s1: arg 1.
  *@s2: arg 2.
- *Return: A pointer to the concatenated string
+ *Return: A new string.
  */
 char	*_strjoin(char *s1, char *s2)
 {

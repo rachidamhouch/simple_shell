@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
- *exec_binary - Execute binary command
- *@command: Pointer to the command structure
+ *exec_binary - Execute binary fils.
+ *@command: arg 1.
+ *@global: arg 2.
  */
-
 void	exec_binary(command_t *command, global_t *global)
 {
 	pid_t	n;
@@ -15,7 +15,7 @@ void	exec_binary(command_t *command, global_t *global)
 		print_error(command->args[0], "command not found", global);
 		global->exit_code = 127;
 	}
-	else if(access(command->path, X_OK))
+	else if (access(command->path, X_OK))
 	{
 		print_error(command->args[0], "Permission denied", global);
 		global->exit_code = 126;
@@ -28,14 +28,14 @@ void	exec_binary(command_t *command, global_t *global)
 		else
 		{
 			waitpid(n, &m, 0);
-			if (WIFEXITED(m) )
-        		global->exit_code = WEXITSTATUS(m);
+			if (WIFEXITED(m))
+				global->exit_code = WEXITSTATUS(m);
 		}
 	}
 }
 
 /**
- *executing - Execute commands
+ *executing - Execute commands.
  *@global: arg 1.
  */
 void	executing(global_t *global)

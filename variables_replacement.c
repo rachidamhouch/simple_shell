@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- *va_re - variables replacement
+ *va_re - variables replacement.
  *@ptr: arg 1.
  *@global: arg 2.
  *Return: pointer to  modified string
@@ -13,7 +13,7 @@ char	*va_re(char *ptr, global_t *global)
 
 	if (!ptr)
 		return (NULL);
-	while(ptr[i])
+	while (ptr[i])
 	{
 		if (!_strncmp(ptr + i, "$$", 2) || !_strncmp(ptr + i, "$?", 2))
 		{

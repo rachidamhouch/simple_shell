@@ -1,15 +1,11 @@
 #include "shell.h"
 
 /**
- *str_copy1 - Copy substring from str until character a
- *@str: The source string
- *@index: Pointer to the current index in the string
- *@a: The character to search for
- *Description: Copies the substring from 
- *the source string starting from the
- *current index until the character  a
- *The currentindex is updated to the next 
- *position after the copied substring
+ *str_copy1 - Copy substring from str.
+ *@str: arg 1.
+ *@index: arg 2.
+ *@a: arg 3.
+ *Return: String.
  */
 static char	*str_copy1(char	*str, int *index, char a)
 {
@@ -34,12 +30,9 @@ static char	*str_copy1(char	*str, int *index, char a)
 }
 
 /**
- *init_env - Initialize the environment variables
+ *init_env - Initialize the environment variables.
  *@envp: arg 1.
  *@global: arg 2.
- * Description: Parses the environment strings
- * creates a linked list of environment variables
- * Sets global variables for the shell
  */
 void	init_env(char **envp, global_t *global)
 {
@@ -70,10 +63,10 @@ void	init_env(char **envp, global_t *global)
 }
 
 /**
- *env_search - Search for an environment variable
+ *env_search - Search for an environment variable.
  * @str: arg 1.
  * @global: arg 2.
- *Return: Value of the environment variable if found, or NULL
+ *Return: Value of the env if found, or NULL
  */
 char	*env_search(char	*str, global_t *global)
 {

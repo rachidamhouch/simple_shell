@@ -1,15 +1,15 @@
 #include "shell.h"
 
 /**
- * _strdup - Duplicates a string
+ * _strdup - duplicates a string.
  * @s1: arg 1.
- * Return: A pointer allocated duplicate string 
+ * Return: the new string.
  */
 char	*_strdup(const char *s1)
 {
 	int		len;
 	int		index;
-	char	*src_copy;	
+	char	*src_copy;
 
 	len = 0;
 	index = -1;

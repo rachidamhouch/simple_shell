@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
- *remove_comments - Removes comments from a string
+ *remove_comments - removes comments from a string.
  *@ptr: arg 1.
  *@fd: arg 2.
- *Return: pointer to  modified string
+ *Return: string.
  */
 char *remove_comments(char *ptr, int fd)
 {

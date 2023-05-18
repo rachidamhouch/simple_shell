@@ -13,7 +13,8 @@
 
 /**
  * struct command_s - singly linked list
- * @ptr: adr.
+ * @path: the path.
+ * @args: the args.
  * @next: points to the next node
  *
  * Description: singly linked list node structure
@@ -23,13 +24,14 @@ typedef struct command_s
 {
 	char		        *path;
 	char		        **args;
-    struct command_s	*next;
+	struct command_s	*next;
 } command_t;
 
 /**
  * struct alias_s - singly linked list
- * @ptr: adr.
- * @next: points to the next node
+ * @name: the nmae.
+ * @value: the value.
+ * @next: points to the next node.
  *
  * Description: singly linked list node structure
  * for alias.
@@ -38,12 +40,13 @@ typedef struct alias_s
 {
 	char		    *name;
 	char		    *value;
-    struct alias_s	*next;
+	struct alias_s	*next;
 } alias_t;
 
 /**
  * struct env_s - singly linked list
- * @ptr: adr.
+ * @name: the name.
+ * @value: the value.
  * @next: points to the next node
  *
  * Description: singly linked list node structure
@@ -53,25 +56,30 @@ typedef struct env_s
 {
 	char		    *name;
 	char		    *value;
-    struct env_s	*next;
+	struct env_s	*next;
 } env_t;
 
 /**
  * struct global_s - global variable.
- * @ptr: adr.
- * @next: points to the next node
+ * @commands: the commands.
+ * @env: the env.
+ * @alias: the alias.
+ * @exit_code: the exit code.
+ * @pid: the pid.
+ * @name: the name.
+ * @envp: the envp.
  *
  * Description: global variable.
  */
 typedef struct global_s
 {
-    command_t   *commands;
-    env_t       *env;
-    alias_t     *alias;
-    int		    exit_code;
-    pid_t       pid;
-    char        *name;
-    char        **envp;
+	command_t   *commands;
+	env_t       *env;
+	alias_t     *alias;
+	int		    exit_code;
+	pid_t       pid;
+	char        *name;
+	char        **envp;
 } global_t;
 
 # define BUFFER_SIZE 1024

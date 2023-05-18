@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
- *handler - Signal handler for SIGINT
+ *handler - signal handler for Ctrl+C=SIGINT.
  *@sig: arg 1.
  */
 void handler(int sig)
@@ -10,7 +10,7 @@ void handler(int sig)
 }
 
 /**
- *main - Entry point of the program
+ *main - main function.
  *@ac: The number of arguments
  *@av: Array of argument strings
  *@env: Array of environment string
