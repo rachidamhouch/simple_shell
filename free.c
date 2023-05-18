@@ -43,7 +43,7 @@ void    free_alias(global_t *global)
 	global->alias = NULL;
 }
 /**
- *free_alias - Free env structures.
+ *free_env - Free env structures.
  *@global: arg 1.
  */
 void    free_env(global_t *global)
