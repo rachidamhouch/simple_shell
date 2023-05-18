@@ -8,3 +8,7 @@
  * @env: Environment
  * Return: Void
  */
+void    my_exit(char **cmd)
+{
+    (void)cmd;
+}

@@ -11,4 +11,5 @@
 
 void env(char **cmd)
 {
-	char **cmd = environ;
+	(void)cmd;
+}
