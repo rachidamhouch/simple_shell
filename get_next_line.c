@@ -86,7 +86,7 @@ static char	*ft_left(char *line)
 }
 
 /**
- * get_next_line - Read a line from fd.
+ * _getline - Read a line from fd.
  * @fd: arg 1.
  * Return: The next line from the file descriptor,
  * or NULL on failure or end of file.
