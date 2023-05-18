@@ -67,8 +67,8 @@ void    free_env(global_t *global)
  */
 void free_all(global_t *global)
 {
-    free_commands(global);
-    free_env(global);
-    free_alias(global);
+	free_commands(global);
+	free_env(global);
+	free_alias(global);
 	free(global);
 }
