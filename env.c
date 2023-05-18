@@ -6,4 +6,11 @@
 void env(char **cmd)
 {
 	(void)cmd;
+	char **env = environ;
+	while (*env != NULL))
+	{
+		printf("%s\n", *env);
+		env++;
+	}
+
 }

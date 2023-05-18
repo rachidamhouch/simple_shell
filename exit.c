@@ -7,4 +7,8 @@
 void    my_exit(char **cmd)
 {
 	(void)cmd;
+
+		printf("EXiting shell \n");
+		exit(0);
+
 }
