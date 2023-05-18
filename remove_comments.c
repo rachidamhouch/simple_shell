@@ -3,18 +3,17 @@
 /**
  *remove_comments - removes comments from a string.
  *@ptr: arg 1.
- *@fd: arg 2.
+ *@global: arg 2.
  *Return: string.
  */
-char *remove_comments(char *ptr, int fd)
+char *remove_comments(char *ptr, global_t *global)
 {
 	int len = 0, i = 0;
 	char    *str;
 
 	if (!ptr)
 	{
-		if (!fd)
-			write(1, "exit\n", 5);
+		free_all(global);
 		exit(0);
 	}
 	while (ptr[len] && ptr[len] != '#' && ptr[len] != '\n')

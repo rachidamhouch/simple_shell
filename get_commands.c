@@ -1,28 +1,4 @@
 #include "shell.h"
-/**
- *free_commands - Free command structures.
- *@global: arg 1.
- */
-void    free_commands(global_t *global)
-{
-	command_t	*tmp = global->commands, *tmp2;
-	char		**str;
-	int			i;
-
-	while (tmp)
-	{
-		i = 0;
-		tmp2 = tmp->next;
-		free(tmp->path);
-		str = tmp->args;
-		while (str[i])
-			free(str[i++]);
-		free(str);
-		free(tmp);
-		tmp = tmp2;
-	}
-	global->commands = NULL;
-}
 
 /**
  *get_path - Get the path of a command.

@@ -16,3 +16,5 @@ int	print_error(char *cmd, char *msg, global_t *global)
 	write(2, "\n", 1);
 	return (1);
 }
+
+

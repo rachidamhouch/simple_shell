@@ -88,7 +88,7 @@ size_t	my_strlen(const char *s);
 char	*my_strjoin(char *s1, char *s2);
 char	*my_strchr(const char *s, int c);
 void	*my_memcpy(void *dst, const void *src, size_t n);
-char    *remove_comments(char *ptr, int fd);
+char	*remove_comments(char *ptr, global_t *global);
 void	lstadd_back_env(env_t **lst, env_t *new);
 void	init_env(char **envp, global_t *global);
 char	*env_search(char	*str, global_t *global);
@@ -109,4 +109,6 @@ int     print_error(char *cmd, char *msg, global_t *global);
 void    env(char **cmd);
 void    cd(char **cmd);
 void    my_exit(char **cmd);
+void	free_all(global_t *global);
+void	free_commands(global_t *global);
 #endif

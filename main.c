@@ -35,11 +35,12 @@ int main(int ac, char **av, char **env)
 	{
 		if (!fd)
 			write(1, "$ ", 2);
-		ptr = va_re(alias(remove_comments(get_next_line(fd), fd), global), global);
+		ptr = va_re(alias(remove_comments(get_next_line(fd), global), global), global);
 		get_commands(ptr, global);
 		executing(global);
 		free(ptr);
 	}
+	free_all(global);
 	return (0);
 }
 
