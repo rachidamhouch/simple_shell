@@ -1,10 +1,8 @@
 #include "shell.h"
 /**
  *handler - Signal handler for SIGINT
- *@sig: The signal number
- *
+ *@sig: arg 1.
  */
-
 void handler(int sig)
 {
 	if (sig == SIGINT)
@@ -16,11 +14,8 @@ void handler(int sig)
  *@ac: The number of arguments
  *@av: Array of argument strings
  *@env: Array of environment string
- *
- * Return:0 always
+ * Return: 0 always
  */
-
-
 int main(int ac, char **av, char **env)
 {
 	char		*ptr, fd = 0;

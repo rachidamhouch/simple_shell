@@ -1,13 +1,10 @@
 #include "shell.h"
 /**
  * my_memcpy - Copy memory area
- * @dst: Pointer to the destination memory area
- * @src: Pointer to the source memory area
- * @n: Number of bytes to copy
- *
- * Return: Pointer to the destination memory area
+ * @dst: arg 1.
+ * @src: arg 2.
+ * @n: arg 3.
  */
-
 void	*my_memcpy(void *dst, const void *src, size_t n)
 {
 	unsigned char	*d;
@@ -25,17 +22,11 @@ void	*my_memcpy(void *dst, const void *src, size_t n)
 	return (dst);
 }
 
-
-
-
-
 /**
  * my_strlen - Calculate the length of a string
- * @s: Pointer to the input string
- *
+ * @s: arg 1.
  * Return: The length of the string
  */
-
 size_t	my_strlen(const char *s)
 {
 	size_t	n;
@@ -46,15 +37,10 @@ size_t	my_strlen(const char *s)
 	return (n);
 }
 
-
-
-
-
 /**
  * my_strjoin - Concatenate two strings
- * @s1: First string
- * @s2: Second string
- *
+ * @s1: arg 1.
+ * @s2: arg 2.
  * Return: Pointer to the concatenated string, or NULL on failure
  */
 char	*my_strjoin(char *s1, char *s2)
@@ -85,16 +71,12 @@ char	*my_strjoin(char *s1, char *s2)
 	return (ptr);
 }
 
-
-
-
 /**
  * my_strchr - Locate first occurrence of a character in a string
- * @s: The string to search
- * @c: The character to find
+ * @s: arg 1.
+ * @c: arg 2.
  * Return NULL
  */
-
 char	*my_strchr(const char *s, int c)
 {
 	char	*n;

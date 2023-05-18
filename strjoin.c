@@ -1,23 +1,11 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   strjoin.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: ramhouch <ramhouch@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/09 03:21:24 by hidhmmou          #+#    #+#             */
-/*   Updated: 2023/05/11 16:51:42 by ramhouch         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-/**
- *_strjoin - Concatenates two strings
- *@s1:The first string
- *@s2:The second string
- *
- *Return: A pointer to the concatenated string
- */
 #include "shell.h"
 
+/**
+ *_strjoin - Concatenates two strings
+ *@s1: arg 1.
+ *@s2: arg 2.
+ *Return: A pointer to the concatenated string
+ */
 char	*_strjoin(char *s1, char *s2)
 {
 	char	*str;

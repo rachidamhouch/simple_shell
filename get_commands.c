@@ -1,7 +1,7 @@
 #include "shell.h"
 /**
  *free_commands - Free the memory allocated for command structures
- *
+ *@global: arg 1.
  */
 void    free_commands(global_t *global)
 {
@@ -24,19 +24,11 @@ void    free_commands(global_t *global)
 	global->commands = NULL;
 }
 
-
-
-
-
-
 /**
  *get_path - Get the full path of a command
- *
- *@str: The command name
- *
- *
+ *@str: arg 1.
+ *@global: arg 2.
  *Return: The full path of the command, or NULL if not found
- *
  */
 char	*get_path(char *str, global_t *global)
 {
@@ -70,14 +62,9 @@ char	*get_path(char *str, global_t *global)
 	return (NULL);
 }
 
-
-
-
-
 /**
  *get_paths - Get the full paths of commands in the command list
- *
- *
+ *@global: arg 2.
  */
 void	get_paths(global_t *global)
 {
@@ -90,15 +77,10 @@ void	get_paths(global_t *global)
 	}
 }
 
-
-
-
 /**
- *
- *
  *get_commands - Parse and store the commands from a string
- *
- *@ptr: The input string containing commands
+ *@ptr: arg 1.
+ *@global: arg 2. 
  */
 void	get_commands(char *ptr, global_t *global)
 {

@@ -1,5 +1,11 @@
 #include "shell.h"
 
+/**
+ *va_re - variables replacement
+ *@ptr: arg 1.
+ *@global: arg 2.
+ *Return: pointer to  modified string
+ */
 char	*va_re(char *ptr, global_t *global)
 {
 	char	*str = NULL, *tmp;

@@ -2,11 +2,9 @@
 
 /**
  * _strdup - Duplicates a string
- * @s1: The string to duplicate
- *
+ * @s1: arg 1.
  * Return: A pointer allocated duplicate string 
  */
-
 char	*_strdup(const char *s1)
 {
 	int		len;

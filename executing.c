@@ -3,10 +3,6 @@
 /**
  *exec_binary - Execute binary command
  *@command: Pointer to the command structure
- *
- *Description: Executes the binary command specified
- *
- *
  */
 
 void	exec_binary(command_t *command, global_t *global)
@@ -38,19 +34,10 @@ void	exec_binary(command_t *command, global_t *global)
 	}
 }
 
-
-
-
-
 /**
  *executing - Execute commands
- *
- *Description: Executes the commands stored
- *
- *
- *
+ *@global: arg 1.
  */
-
 void	executing(global_t *global)
 {
 	command_t *tmp = global->commands;

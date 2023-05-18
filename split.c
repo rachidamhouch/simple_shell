@@ -1,8 +1,7 @@
 #include "shell.h"
 /**
  *m_error - Frees memory for given array
- *@arr: the array to free
- *
+ *@arr: arg 1.
  *Return:NULL
  */
 static char	**m_error(char	**arr)
@@ -16,15 +15,12 @@ static char	**m_error(char	**arr)
 	return (NULL);
 }
 
-
 /**
  *ft_count_words - Counts the number of words in a string
- *@str: The input string
- *@charset: The character used as a separator between words
- *
+ *@str: arg 1.
+ *@charset: arg 2.
  *Return: The number of words
  */
-
 static int	ft_count_words(char const *str, char charset)
 {
 	int	i;
@@ -44,16 +40,12 @@ static int	ft_count_words(char const *str, char charset)
 	return (nbr_w);
 }
 
-
 /**
  *ft_word_len - calculate the lenth of word in a string
- *@str: The input string
- *@charset: character used as a separator between words
- *
- *
+ *@str: arg 1.
+ *@charset: arg 2.
  *Return: The length of the word
  */
-
 static int	ft_word_len(char const *str, char charset)
 {
 	int	i;
@@ -64,17 +56,12 @@ static int	ft_word_len(char const *str, char charset)
 	return (i);
 }
 
-
-
-
 /**
  *ft_word_grep - Extracts a word from a string
- *@str: The input string
- *@charset: character used as a separator between words
- *
+ *@str: arg 1.
+ *@charset: arg 2.
  *Return: pointer to the extracted word
  */
-
 static char	*ft_word_grep(char const *str, char charset)
 {
 	int		len_w;
@@ -95,15 +82,12 @@ static char	*ft_word_grep(char const *str, char charset)
 	return (word);
 }
 
-
 /**
  *split - string array of substrings based on a delimiter
- *@s: The input string
- *@c: The delimiter character
- *
+ *@s: arg 1.
+ *@c: arg 2.
  *Return: An array of pointers to the substrings
  */
-
 char	**split(char const *s, char c)
 {
 	int			i;

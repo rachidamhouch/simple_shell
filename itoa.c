@@ -1,5 +1,10 @@
 #include "shell.h"
 
+/**
+ *ft_abs - abs.
+ *@nb: arg 1.
+ *Return: pos num.
+ */
 static int	ft_abs(int nb)
 {
 	if (nb < 0)
@@ -7,6 +12,11 @@ static int	ft_abs(int nb)
 	return (nb);
 }
 
+/**
+ *ft_nbrpow - pow.
+ *@nbr: arg 1.
+ *Return: pow.
+ */
 static int	ft_nbrpow(int nbr)
 {
 	int	pow;
@@ -20,6 +30,11 @@ static int	ft_nbrpow(int nbr)
 	return (pow);
 }
 
+/**
+ *_itoa - int to array of chars.
+ *@n: arg 1.
+ *Return: string.
+ */
 char	*_itoa(int n)
 {
 	char	*res;

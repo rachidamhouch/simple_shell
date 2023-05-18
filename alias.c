@@ -2,7 +2,6 @@
 /**
  * alias_search - Implements the "alias" builtin command
  * @str: Pointer to  struct with the shell state and args.
- *
  * This function defines new aliases in the shell
  * prints all existing aliases in the shell
  */

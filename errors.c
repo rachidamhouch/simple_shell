@@ -1,9 +1,9 @@
 #include "shell.h"
 /**
  * print_error - Print error message to stderr
- * @cmd: The command name
- * @msg: The error message
- *
+ * @cmd: arg 1.
+ * @msg: arg 2.
+ * @global: arg 3.
  * Return: 1
  */
 int	print_error(char *cmd, char *msg, global_t *global)
