@@ -91,7 +91,7 @@ static char	*ft_left(char *line)
  * Return: The next line from the file descriptor,
  * or NULL on failure or end of file.
  */
-char	*get_next_line(int fd)
+char	*_getline(int fd)
 {
 	static char	*left;
 	char		*line;

@@ -83,7 +83,7 @@ typedef struct global_s
 } global_t;
 
 # define BUFFER_SIZE 1024
-char	*get_next_line(int fd);
+char	*_getline(int fd);
 size_t	my_strlen(const char *s);
 char	*my_strjoin(char *s1, char *s2);
 char	*my_strchr(const char *s, int c);
