@@ -6,11 +6,11 @@
  * This function defines new aliases in the shell
  * prints all existing aliases in the shell
  */
-char	*alias_search(char	*str)
+char	*alias_search(char	*str, global_t *global)
 {
 	alias_t	*ptr;
 
-	ptr = global.alias;
+	ptr = global->alias;
 	while (ptr)
 	{
 		if (ptr->name && !_strncmp(str, ptr->name, _strlen(str) + 1))
@@ -20,17 +20,17 @@ char	*alias_search(char	*str)
 	return (0);
 }
 
-char	*alias(char *ptr)
+char	*alias(char *ptr, global_t *global)
 {
 	int	i = 0;
 	char **str = split(ptr, ' '), *str2 = NULL;
 
 	while (str[i])
 	{
-		if (alias_search(str[i]))
+		if (alias_search(str[i], global))
 		{
 			free(str[i]);
-			str[i] = _strdup(alias_search(str[i]));
+			str[i] = _strdup(alias_search(str[i], global));
 		}
 		i++;
 	}

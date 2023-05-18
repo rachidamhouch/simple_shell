@@ -1,6 +1,6 @@
 #include "shell.h"
 
-char	*va_re(char *ptr)
+char	*va_re(char *ptr, global_t *global)
 {
 	char	*str = NULL, *tmp;
 	int		i = 0, m = 0;
@@ -12,9 +12,9 @@ char	*va_re(char *ptr)
 		if (!_strncmp(ptr + i, "$$", 2) || !_strncmp(ptr + i, "$?", 2))
 		{
 			if (!_strncmp(ptr + i, "$$", 2))
-				tmp = _itoa(global.pid);
+				tmp = _itoa(global->pid);
 			else if (!_strncmp(ptr + i, "$?", 2))
-				tmp = _itoa(global.exit_code);
+				tmp = _itoa(global->exit_code);
 			ptr[i] = 0;
 			str = _strjoin(str, ptr + m);
 			str = _strjoin(str, tmp);

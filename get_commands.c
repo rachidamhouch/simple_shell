@@ -3,9 +3,9 @@
  *free_commands - Free the memory allocated for command structures
  *
  */
-void    free_commands(void)
+void    free_commands(global_t *global)
 {
-	command_t	*tmp = global.commands, *tmp2;
+	command_t	*tmp = global->commands, *tmp2;
 	char		**str;
 	int			i;
 
@@ -21,7 +21,7 @@ void    free_commands(void)
 		free(tmp);
 		tmp = tmp2;
 	}
-	global.commands = NULL;
+	global->commands = NULL;
 }
 
 
@@ -38,14 +38,14 @@ void    free_commands(void)
  *Return: The full path of the command, or NULL if not found
  *
  */
-char	*get_path(char *str)
+char	*get_path(char *str, global_t *global)
 {
 	char	*ptr = _strdup(str), **paths, *tmp;
 	int		i = 0;
 
 	if (!access(ptr, F_OK))
 		return (ptr);
-	paths = split(env_search("PATH"), ':');
+	paths = split(env_search("PATH", global), ':');
 	while (paths[i])
 	{
 		tmp = _strjoin(_strdup(paths[i]), "/");
@@ -79,13 +79,13 @@ char	*get_path(char *str)
  *
  *
  */
-void	get_paths(void)
+void	get_paths(global_t *global)
 {
-	command_t	*tmp = global.commands;
+	command_t	*tmp = global->commands;
 
 	while (tmp)
 	{
-		tmp->path = get_path(tmp->args[0]);
+		tmp->path = get_path(tmp->args[0], global);
 		tmp = tmp->next;
 	}
 }
@@ -100,13 +100,13 @@ void	get_paths(void)
  *
  *@ptr: The input string containing commands
  */
-void	get_commands(char *ptr)
+void	get_commands(char *ptr, global_t *global)
 {
 	char	    **commands;
 	int         i = 0;
 	command_t   *node;
 
-	free_commands();
+	free_commands(global);
 	if (!ptr)
 		return;
 	commands = split(ptr, ';');
@@ -116,12 +116,12 @@ void	get_commands(char *ptr)
 		node->path = NULL;
 		node->next = NULL;
 		node->args = split(commands[i], ' ');
-		lstadd_back_command(&global.commands, node);
+		lstadd_back_command(&global->commands, node);
 		i++;
 	}
 	i = 0;
 	while (commands[i])
 		free(commands[i++]);
 	free(commands);
-	get_paths();
+	get_paths(global);
 }

@@ -54,7 +54,7 @@ static char	*str_copy1(char	*str, int *index, char a)
  * Sets global variables for the shell
  * 
  */
-void	init_env(char **envp)
+void	init_env(char **envp, global_t *global)
 {
 	int		i;
 	env_t	*env;
@@ -74,12 +74,12 @@ void	init_env(char **envp)
 		lstadd_back_env(&head, env);
 		i++;
 	}
-	global.env = head;
-	global.commands = NULL;
-	global.exit_code = 0;
-	global.pid = getpid();
-	global.alias = NULL;
-	global.envp = envp;
+	global->env = head;
+	global->commands = NULL;
+	global->exit_code = 0;
+	global->pid = getpid();
+	global->alias = NULL;
+	global->envp = envp;
 }
 
 
@@ -99,11 +99,11 @@ void	init_env(char **envp)
  *
  */
 
-char	*env_search(char	*str)
+char	*env_search(char	*str, global_t *global)
 {
 	env_t	*ptr;
 
-	ptr = global.env;
+	ptr = global->env;
 	while (ptr)
 	{
 		if (ptr->name && !_strncmp(str, ptr->name, _strlen(str) + 1))

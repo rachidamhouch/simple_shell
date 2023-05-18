@@ -74,8 +74,6 @@ typedef struct global_s
     char        **envp;
 } global_t;
 
-global_t	global;
-
 # define BUFFER_SIZE 1024
 char	*get_next_line(int fd);
 size_t	my_strlen(const char *s);
@@ -84,22 +82,22 @@ char	*my_strchr(const char *s, int c);
 void	*my_memcpy(void *dst, const void *src, size_t n);
 char    *remove_comments(char *ptr, int fd);
 void	lstadd_back_env(env_t **lst, env_t *new);
-void	init_env(char **envp);
-char	*env_search(char	*str);
+void	init_env(char **envp, global_t *global);
+char	*env_search(char	*str, global_t *global);
 size_t	_strlen(const char *s);
 int     _strncmp(const char *s1, const char *s2, size_t n);
 void	lstadd_back_command(command_t **lst, command_t *new);
 void	lstadd_back_alias(alias_t **lst, alias_t *new);
 char	**split(char const *s, char c);
 char	*_strdup(const char *s1);
-char	*alias(char *ptr);
+char	*alias(char *ptr, global_t *global);
 char	*_strjoin(char *s1, char *s2);
 char	*_itoa(int n);
-char    *va_re(char *ptr);
-void	get_commands(char *ptr);
+char    *va_re(char *ptr, global_t *global);
+void	get_commands(char *ptr, global_t *global);
 int     exec_builtin(char **args);
-void	executing(void);
-int     print_error(char *cmd, char *msg);
+void	executing(global_t *global);
+int     print_error(char *cmd, char *msg, global_t *global);
 void    env(char **cmd);
 void    cd(char **cmd);
 void    my_exit(char **cmd);
