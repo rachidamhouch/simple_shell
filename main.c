@@ -40,6 +40,7 @@ int main(int ac, char **av, char **env)
 		global->cmd = ptr;
 		get_commands(ptr, global);
 		executing(global);
+		global->n++;
 		free(ptr);
 	}
 	free_all(global);

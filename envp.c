@@ -60,6 +60,7 @@ void	init_env(char **envp, global_t *global)
 	global->pid = getpid();
 	global->alias = NULL;
 	global->envp = envp;
+	global->n = 1;
 }
 
 /**

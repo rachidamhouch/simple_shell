@@ -12,7 +12,7 @@ void	exec_binary(command_t *command, global_t *global)
 
 	if (!command->path)
 	{
-		print_error(command->args[0], "command not found", global);
+		print_error(command->args[0], "not found", global);
 		global->exit_code = 127;
 	}
 	else if (access(command->path, X_OK))

@@ -70,6 +70,7 @@ typedef struct env_s
  * @envp: the envp.
  * @cmd: the cmd.
  * @left: the left.
+ * @n: the line num.
  *
  * Description: global variable.
  */
@@ -84,6 +85,7 @@ typedef struct global_s
 	char        **envp;
 	char		*cmd;
 	char		*left;
+	int			n;
 } global_t;
 
 # define BUFFER_SIZE 1024
@@ -120,5 +122,6 @@ int		_atoi(char *s);
 void	_setenv(char **cmd, global_t *global);
 env_t	*envsearch(char	*str, global_t *global);
 void	_unsetenv(char **cmd, global_t *global);
+void	putnbr_fd(int n, int fd);
 
 #endif

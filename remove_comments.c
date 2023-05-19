@@ -14,6 +14,7 @@ char *remove_comments(char *ptr, global_t *global)
 	if (!ptr)
 	{
 		global->cmd = NULL;
+		write(1, "\n", 1);
 		free_all(global);
 		exit(0);
 	}
