@@ -4,7 +4,7 @@
  *get_path - Get the path of a command.
  *@str: arg 1.
  *@global: arg 2.
- *Return: The Path of the command.
+ *Return: The Path of a command.
  */
 char	*get_path(char *str, global_t *global)
 {
