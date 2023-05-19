@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- *lstadd_back_env - Add a new node to the end of list.
+ *lstadd_back_env - Add new node to the end of list.
  *@lst: arg 1.
  *@new: arg 2.
  */
