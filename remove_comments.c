@@ -4,9 +4,10 @@
  *remove_comments - removes comments from a string.
  *@ptr: arg 1.
  *@global: arg 2.
+ *@fd: arg 3.
  *Return: string.
  */
-char *remove_comments(char *ptr, global_t *global)
+char *remove_comments(char *ptr, global_t *global, int fd)
 {
 	int len = 0, i = 0;
 	char    *str;
@@ -14,7 +15,8 @@ char *remove_comments(char *ptr, global_t *global)
 	if (!ptr)
 	{
 		global->cmd = NULL;
-		write(1, "\n", 1);
+		if (isatty(fd))
+			write(1, "\n", 1);
 		free_all(global);
 		exit(0);
 	}

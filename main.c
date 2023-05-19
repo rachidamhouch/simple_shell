@@ -33,10 +33,10 @@ int main(int ac, char **av, char **env)
 	init_env(env, global);
 	while (1)
 	{
-		if (!fd)
+		if (isatty(fd))
 			write(1, "$ ", 2);
 		ptr = _getline(fd, global);
-		ptr = va_re(alias(remove_comments(ptr, global), global), global);
+		ptr = va_re(alias(remove_comments(ptr, global, fd), global), global);
 		global->cmd = ptr;
 		get_commands(ptr, global);
 		executing(global);
