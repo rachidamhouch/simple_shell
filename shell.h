@@ -103,12 +103,18 @@ char	*_strjoin(char *s1, char *s2);
 char	*_itoa(int n);
 char    *va_re(char *ptr, global_t *global);
 void	get_commands(char *ptr, global_t *global);
-int     exec_builtin(char **args);
+int		exec_builtin(char **args, global_t *global);
 void	executing(global_t *global);
 int     print_error(char *cmd, char *msg, global_t *global);
-void    env(char **cmd);
+void    env(char **cmd, global_t *global);
 void    cd(char **cmd);
-void    my_exit(char **cmd);
+void    my_exit(char **cmd, global_t *global);
 void	free_all(global_t *global);
 void	free_commands(global_t *global);
+int		print(char *str, int fd, int new);
+int		_atoi(char *s);
+void	_setenv(char **cmd, global_t *global);
+env_t	*envsearch(char	*str, global_t *global);
+void	_unsetenv(char **cmd, global_t *global);
+
 #endif

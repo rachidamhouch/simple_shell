@@ -81,3 +81,23 @@ char	*env_search(char	*str, global_t *global)
 	}
 	return (0);
 }
+
+/**
+ *envsearch - Search for an environment variable.
+ * @str: arg 1.
+ * @global: arg 2.
+ *Return: Value of the env if found, or NULL
+ */
+env_t	*envsearch(char	*str, global_t *global)
+{
+	env_t	*ptr;
+
+	ptr = global->env;
+	while (ptr)
+	{
+		if (ptr->name && !_strncmp(str, ptr->name, _strlen(str) + 1))
+			return (ptr);
+		ptr = ptr->next;
+	}
+	return (0);
+}
