@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * alias_search - search for an alias.
+ * alias_search - search for  an alias.
  * @str: arg 1.
  * @global: arg 2.
  * Return: string or NULL.
