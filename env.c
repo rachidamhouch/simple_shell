@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
- * env - prints the environment.
+ * env - prints the environment
  * @cmd: arg 1.
  * @global: arg 2.
  */
