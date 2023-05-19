@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- *get_path - Get the path of a command.
+ *get_path - Get the path of  command.
  *@str: arg 1.
  *@global: arg 2.
  *Return: The Path of a command.
