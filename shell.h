@@ -125,5 +125,7 @@ void	_unsetenv(char **cmd, global_t *global);
 void	putnbr_fd(int n, int fd);
 char	*str_copy1(char	*str, int *index, char a);
 void	_alias(char **cmd, global_t *global);
+char	*alias_search(char	*str, global_t *global);
+alias_t	*aliassearch(char	*str, global_t *global);
 
 #endif
