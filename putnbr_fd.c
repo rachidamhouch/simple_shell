@@ -13,5 +13,5 @@ void	putnbr_fd(int n, int fd)
 	{
 		putnbr_fd(n / 10, fd);
 		putnbr_fd(n % 10, fd);
-	}	
+	}
 }
