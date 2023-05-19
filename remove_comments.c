@@ -13,6 +13,7 @@ char *remove_comments(char *ptr, global_t *global)
 
 	if (!ptr)
 	{
+		global->cmd = NULL;
 		free_all(global);
 		exit(0);
 	}

@@ -68,6 +68,7 @@ typedef struct env_s
  * @pid: the pid.
  * @name: the name.
  * @envp: the envp.
+ * @cmd: the cmd.
  *
  * Description: global variable.
  */
@@ -80,6 +81,7 @@ typedef struct global_s
 	pid_t       pid;
 	char        *name;
 	char        **envp;
+	char		*cmd;
 } global_t;
 
 # define BUFFER_SIZE 1024
