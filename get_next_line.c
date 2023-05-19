@@ -62,7 +62,7 @@ static char	*get_line(char *line)
 
 /**
  * ft_left - Extract the remaining part of the string.
- * @line: arg 1.
+ * @line: arg 1..
  * Return: The remaining part of the string
  */
 static char	*ft_left(char *line)
@@ -88,10 +88,11 @@ static char	*ft_left(char *line)
 /**
  * _getline - Read a line from fd.
  * @fd: arg 1.
+ * @global: arg 2.
  * Return: The next line from the file descriptor,
  * or NULL on failure or end of file.
  */
-char	*_getline(int fd)
+char	*_getline(int fd, global_t *global)
 {
 	static char	*left;
 	char		*line;
@@ -102,6 +103,7 @@ char	*_getline(int fd)
 	line = all(fd, left);
 	next_line = get_line(line);
 	left = ft_left(line);
+	global->left = left;
 	free(line);
 	return (next_line);
 }

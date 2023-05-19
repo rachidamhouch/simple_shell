@@ -69,6 +69,7 @@ typedef struct env_s
  * @name: the name.
  * @envp: the envp.
  * @cmd: the cmd.
+ * @left: the left.
  *
  * Description: global variable.
  */
@@ -82,10 +83,11 @@ typedef struct global_s
 	char        *name;
 	char        **envp;
 	char		*cmd;
+	char		*left;
 } global_t;
 
 # define BUFFER_SIZE 1024
-char	*_getline(int fd);
+char	*_getline(int fd, global_t *global);
 size_t	my_strlen(const char *s);
 char	*my_strjoin(char *s1, char *s2);
 char	*my_strchr(const char *s, int c);
