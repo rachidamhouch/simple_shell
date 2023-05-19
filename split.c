@@ -16,7 +16,7 @@ static char	**m_error(char	**arr)
 }
 
 /**
- *ft_count_words - counts the number of words.
+ *ft_count_words - count the number of words.
  *@str: arg 1.
  *@charset: arg 2.
  *Return: the num of words.
