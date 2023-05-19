@@ -44,6 +44,7 @@ void    my_exit(char **cmd, global_t *global)
 			putnbr_fd(global->n, 2);
 			print(": exit: Illegal number: ", 2, 0);
 			print(cmd[1], 2, 1);
+			global->exit_code = 2;
 		}
 		else
 			exit(_atoi(cmd[1]));

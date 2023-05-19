@@ -121,6 +121,7 @@ void _alias(char **cmd, global_t *global)
 	alias_t *ptr = global->alias;
 	int		i = 1;
 
+	global->exit_code = 0;
 	if (!cmd[1])
 	{
 		while (ptr)
@@ -141,6 +142,7 @@ void _alias(char **cmd, global_t *global)
 				print("alias: ", 2, 0);
 				print(cmd[i], 2, 0);
 				print(" not found", 2, 1);
+				global->exit_code = 1;
 			}
 			i++;
 		}
