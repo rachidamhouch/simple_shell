@@ -39,7 +39,7 @@ int	exec_builtin(char **args, global_t *global)
 	}
 	else if (!_strncmp("alias", cmd, _strlen("alias") + 1))
 	{
-		write(1, "alias: built in\n", _strlen("alias: built in\n"));
+		_alias(args, global);
 		return (1);
 	}
 	return (0);

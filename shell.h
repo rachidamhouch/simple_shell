@@ -123,5 +123,7 @@ void	_setenv(char **cmd, global_t *global);
 env_t	*envsearch(char	*str, global_t *global);
 void	_unsetenv(char **cmd, global_t *global);
 void	putnbr_fd(int n, int fd);
+char	*str_copy1(char	*str, int *index, char a);
+void	_alias(char **cmd, global_t *global);
 
 #endif

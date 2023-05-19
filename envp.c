@@ -7,7 +7,7 @@
  *@a: arg 3.
  *Return: String.
  */
-static char	*str_copy1(char	*str, int *index, char a)
+char	*str_copy1(char	*str, int *index, char a)
 {
 	int		i;
 	int		start;
