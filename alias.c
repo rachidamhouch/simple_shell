@@ -18,6 +18,25 @@ char	*alias_search(char	*str, global_t *global)
 	}
 	return (0);
 }
+/**
+ * aliassearch - search for an alias.
+ * @str: arg 1.
+ * @global: arg 2.
+ * Return: alias_t or NULL.
+ */
+alias_t	*aliassearch(char	*str, global_t *global)
+{
+	alias_t	*ptr;
+
+	ptr = global->alias;
+	while (ptr)
+	{
+		if (ptr->name && !_strncmp(str, ptr->name, _strlen(str) + 1))
+			return (ptr);
+		ptr = ptr->next;
+	}
+	return (0);
+}
 
 /**
  * alias - Implements the alias built-in.
@@ -30,7 +49,7 @@ char	*alias(char *ptr, global_t *global)
 	int	i = 0;
 	char **str = split(ptr, ' '), *str2 = NULL;
 
-	while (str[i])
+	while (str[i] && _strncmp(str[0], "alias", _strlen("alias") + 1))
 	{
 		if (alias_search(str[i], global))
 		{
@@ -53,6 +72,12 @@ char	*alias(char *ptr, global_t *global)
 	free(ptr);
 	return (str2);
 }
+
+/**
+ * is_new - new alias or not.
+ * @str: arg 1.
+ * Return: 1 or 0.
+ */
 int	is_new(char *str)
 {
 	int	i = 0;
@@ -83,10 +108,56 @@ char	*aliassprint(char	*str, global_t *global)
 	return (0);
 }
 
+/**
+ * help__alias - help _alias function.
+ * @str: arg 1.
+ * @global: arg 2.
+ */
+void help__alias(char **cmd, global_t *global)
+{
+	char	*str1, *str2;
+	int		i = 1, index;
+	alias_t	*node;
+
+	while (cmd[i])
+	{
+		if (is_new(cmd[i]))
+		{
+			index = 0;
+			str1 = str_copy1(cmd[i], &index, '=');
+			index++;
+			str2 = str_copy1(cmd[i], &index, 0);
+			if (aliassearch(str1, global))
+			{
+				node = aliassearch(str1, global);
+				free(str1);
+				free(node->value);
+				node->value = str2;
+			}
+			else
+			{
+				node = malloc(sizeof(alias_t));
+				node->next = NULL;
+				node->name = str1;
+				node->value = str2;
+				lstadd_back_alias(&global->alias, node);
+			}
+		}
+		else
+			aliassprint(cmd[i], global);
+		i++;
+	}
+}
+
+/**
+ * _alias - add or print alias.
+ * @str: arg 1.
+ * @global: arg 2.
+ */
 void _alias(char **cmd, global_t *global)
 {
-	alias_t *ptr = global->alias, *node;
-	int	i = 1, index;
+	alias_t *ptr = global->alias;
+	int		i = 1;
 
 	if (!cmd[1])
 	{
@@ -111,22 +182,6 @@ void _alias(char **cmd, global_t *global)
 			}
 			i++;
 		}
-		i = 1;
-		while (cmd[i])
-		{
-			if (is_new(cmd[i]))
-			{
-				index = 0;
-				node = malloc(sizeof(alias_t));
-				node->next = NULL;
-				node->name = str_copy1(cmd[i], &index, '=');
-				index++;
-				node->value = str_copy1(cmd[i], &index, 0);
-				lstadd_back_alias(&global->alias, node);
-			}
-			else
-				aliassprint(cmd[i], global);
-			i++;
-		}
+		help__alias(cmd, global);
 	}
 }

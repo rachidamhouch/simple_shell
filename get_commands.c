@@ -70,6 +70,7 @@ void	get_commands(char *ptr, global_t *global)
 	commands = split(ptr, ';');
 	while (commands[i])
 	{
+		commands[i] = va_re(alias(commands[i], global), global);
 		node = malloc(sizeof(command_t));
 		node->path = NULL;
 		node->next = NULL;

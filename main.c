@@ -36,7 +36,7 @@ int main(int ac, char **av, char **env)
 		if (isatty(fd))
 			write(1, "$ ", 2);
 		ptr = _getline(fd, global);
-		ptr = va_re(alias(remove_comments(ptr, global, fd), global), global);
+		ptr = remove_comments(ptr, global, fd);
 		global->cmd = ptr;
 		get_commands(ptr, global);
 		executing(global);
