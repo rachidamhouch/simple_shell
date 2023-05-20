@@ -25,7 +25,7 @@ void    free_commands(global_t *global)
 	global->commands = NULL;
 }
 /**
- *free_alias - Free alias structres.
+ *free_alias - Free alias structures.
  *@global: arg 1.
  */
 void    free_alias(global_t *global)

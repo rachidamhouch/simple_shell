@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- *remove_comments - remove comments from a string.
+ *remove_comments - removes comments from a string.
  *@ptr: arg 1.
  *@global: arg 2.
  *@fd: arg 3.

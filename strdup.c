@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * _strdup - duplicate a string.
+ * _strdup - duplicates a string.
  * @s1: arg 1.
  * Return: the new string.
  */

@@ -39,7 +39,7 @@ void _setenv(char **cmd, global_t *global)
 }
 
 /**
- *_unsetenv - unset variable env.
+ *_unsetenv - unset var env.
  *@cmd: arg 1.
  *@global: arg 2.
  */

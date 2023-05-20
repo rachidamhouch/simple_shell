@@ -31,6 +31,6 @@ void cd(char **cmd)
 		if (chdir(home_dir) !=0)
 		{
 			perror("cd");
-			}
+		}
 	}
 }

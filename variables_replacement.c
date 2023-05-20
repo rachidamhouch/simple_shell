@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- *va_re - variable replacement.
+ *va_re - variables replacement.
  *@ptr: arg 1.
  *@global: arg 2.
  *Return: pointer to  modified string

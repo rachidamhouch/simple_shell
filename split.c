@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
- *m_error - Free memory.
+ *m_error - Frees memory.
  *@arr: arg 1.
  *Return:NULL
  */
@@ -16,7 +16,7 @@ static char	**m_error(char	**arr)
 }
 
 /**
- *ft_count_words - count the number of words.
+ *ft_count_words - counts the number of words.
  *@str: arg 1.
  *@charset: arg 2.
  *Return: the num of words.
@@ -57,7 +57,7 @@ static int	ft_word_len(char const *str, char charset)
 }
 
 /**
- *ft_word_grep - extract a word.
+ *ft_word_grep - extracts a word.
  *@str: arg 1.
  *@charset: arg 2.
  *Return: ne word.

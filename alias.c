@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * alias - Implement the alias built-in.
+ * alias - Implements the alias built-in.
  * @ptr: arg 1.
  * @global: arg 2.
  * Return: string or NULL.
