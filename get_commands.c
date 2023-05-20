@@ -14,6 +14,8 @@ char	*get_path(char *str, global_t *global)
 	if (!access(ptr, F_OK))
 		return (ptr);
 	paths = split(env_search("PATH", global), ':');
+	if (!paths)
+		return (0);
 	while (paths[i])
 	{
 		tmp = _strjoin(_strdup(paths[i]), "/");
