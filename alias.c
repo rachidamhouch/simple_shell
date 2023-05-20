@@ -9,14 +9,15 @@
 char	*alias(char *ptr, global_t *global)
 {
 	int	i = 0;
-	char **str = split(ptr, ' '), *str2 = NULL;
+	char **str = split(ptr, ' '), *str2 = NULL, *tmp;
 
 	while (str[i] && _strncmp(str[0], "alias", _strlen("alias") + 1))
 	{
 		if (alias_search(str[i], global))
 		{
-			free(str[i]);
+			tmp = str[i];
 			str[i] = _strdup(alias_search(str[i], global));
+			free(tmp);
 		}
 		i++;
 	}
