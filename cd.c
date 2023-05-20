@@ -28,6 +28,9 @@ void cd(char **cmd)
 			 write(STDERR_FILENO, "cd: No OLDPWD environments variables set\n", 40);
 			 return;
 		}
+		if (chdir(home_dir) !=0)
+		{
+			perror("cd");
 			}
 	}
 }
