@@ -19,7 +19,7 @@ int	exec_builtin(char **args, global_t *global)
 	}
 	else if (!_strncmp("cd", cmd, _strlen("cd") + 1))
 	{
-		cd(args);
+		cd(args, global);
 		return (1);
 	}
 	else if (!_strncmp("exit", cmd, _strlen("exit") + 1))

@@ -113,7 +113,7 @@ int		exec_builtin(char **args, global_t *global);
 void	executing(global_t *global);
 int     print_error(char *cmd, char *msg, global_t *global);
 void    env(char **cmd, global_t *global);
-void    cd(char **cmd);
+void	cd(char **cmd, global_t *global);
 void    my_exit(char **cmd, global_t *global);
 void	free_all(global_t *global);
 void	free_commands(global_t *global);
