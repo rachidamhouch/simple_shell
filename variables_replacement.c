@@ -1,6 +1,45 @@
 #include "shell.h"
 
 /**
+ *help_va_re - variables replacement.
+ *@ptr: arg 1.
+ *@global: arg 2.
+ *Return: pointer to  modified string
+ */
+char *help_va_re(char *ptr, global_t *global)
+{
+	int	i = 0;
+	char **str = split(ptr, ' '), *str2 = NULL, *tmp;
+
+	while (str[i])
+	{
+		if (str[i][0] == '$' && str[i][1])
+		{
+			tmp = str[i];
+			if (env_search(str[i] + 1, global))
+				str[i] = _strdup(env_search(str[i] + 1, global));
+			else
+				str[i] = _strdup("");
+			free(tmp);
+		}
+		i++;
+	}
+	i = 0;
+	while (str[i])
+	{
+		str2 = _strjoin(str2, str[i]);
+		str2 = _strjoin(str2, " ");
+		i++;
+	}
+	i = 0;
+	while (str[i])
+		free(str[i++]);
+	free(str);
+	free(ptr);
+	return (str2);
+}
+
+/**
  *va_re - variables replacement.
  *@ptr: arg 1.
  *@global: arg 2.
@@ -35,5 +74,5 @@ char	*va_re(char *ptr, global_t *global)
 	if (!str)
 		str = _strdup(ptr);
 	free(ptr);
-	return (str);
+	return (help_va_re(str, global));
 }
