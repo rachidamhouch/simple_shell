@@ -104,8 +104,9 @@ void help__alias(char **cmd, global_t *global)
 				node->name = str1;
 				if (alias_search(str2, global))
 				{
-					free(str2);
+					str1 = str2;
 					str2 = _strdup(alias_search(str2, global));
+					free(str1);
 				}
 				node->value = str2;
 				lstadd_back_alias(&global->alias, node);
