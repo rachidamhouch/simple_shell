@@ -20,7 +20,11 @@ void help_cd(char **cmd, global_t *global)
 		tmp = getcwd(0, 0);
 		if (chdir(env_search("OLDPWD", global)))
 		{
-			perror("cd");
+			print(global->name, 2, 0);
+			print(": ", 2, 0);
+			putnbr_fd(global->n, 2);
+			print(": cd: can't cd to ", 2, 0);
+			print(cmd[1], 2, 1);
 			free(tmp);
 		}
 		else
@@ -52,7 +56,11 @@ void help_cd2(char **cmd, global_t *global)
 	tmp = getcwd(0, 0);
 	if (chdir(cmd[1]))
 	{
-		perror("cd");
+		print(global->name, 2, 0);
+		print(": ", 2, 0);
+		putnbr_fd(global->n, 2);
+		print(": cd: can't cd to ", 2, 0);
+		print(cmd[1], 2, 1);
 		free(tmp);
 	}
 	else
@@ -86,7 +94,11 @@ void cd(char **cmd, global_t *global)
 			tmp = getcwd(0, 0);
 			if (chdir(env_search("HOME", global)))
 			{
-				perror("cd");
+				print(global->name, 2, 0);
+				print(": ", 2, 0);
+				putnbr_fd(global->n, 2);
+				print(": cd: can't cd to ", 2, 0);
+				print(cmd[1], 2, 1);
 				free(tmp);
 			}
 			else
