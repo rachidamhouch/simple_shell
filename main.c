@@ -28,7 +28,14 @@ int main(int ac, char **av, char **env)
 	{
 		fd = open(av[1], O_RDONLY);
 		if (fd == -1)
-			return (print_error(av[1], "Can't open it", global));
+		{
+			print(global->name, 2, 0);
+			print(": ", 2, 0);
+			putnbr_fd(global->n, 2);
+			print(": Can't open ", 2, 0);
+			print(av[1], 2, 1);
+			return (127);
+		}
 	}
 	init_env(env, global);
 	while (1)
