@@ -14,7 +14,7 @@ void help_cd(char **cmd, global_t *global)
 	t[3] = NULL;
 
 	if (!env_search("OLDPWD", global))
-		print_error(cmd[0], env_search("PWD", global), global);
+		print(env_search("PWD", global), 1, 1);
 	else
 	{
 		tmp = getcwd(0, 0);
