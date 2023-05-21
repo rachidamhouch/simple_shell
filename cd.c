@@ -14,7 +14,7 @@ void help_cd(char **cmd, global_t *global)
 	t[3] = NULL;
 
 	if (!env_search("OLDPWD", global))
-		print_error(cmd[0], "OLDPWD not set", global);
+		print_error(cmd[0], env_search("PWD", global), global);
 	else
 	{
 		tmp = getcwd(0, 0);
@@ -81,9 +81,7 @@ void cd(char **cmd, global_t *global)
 	t[3] = NULL;
 	if (!cmd[1])
 	{
-		if (!env_search("HOME", global))
-			print_error(cmd[0], "HOME not set", global);
-		else
+		if (env_search("HOME", global))
 		{
 			tmp = getcwd(0, 0);
 			if (chdir(env_search("HOME", global)))
