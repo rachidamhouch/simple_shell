@@ -50,7 +50,8 @@ void	get_paths(global_t *global)
 
 	while (tmp)
 	{
-		tmp->path = get_path(tmp->args[0], global);
+		if (tmp->args)
+			tmp->path = get_path(tmp->args[0], global);
 		tmp = tmp->next;
 	}
 }

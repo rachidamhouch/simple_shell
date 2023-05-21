@@ -44,8 +44,9 @@ void	executing(global_t *global)
 
 	while (tmp)
 	{
-		if (!exec_builtin(tmp->args, global))
-			exec_binary(tmp, global);
+		if (tmp->args)
+			if (!exec_builtin(tmp->args, global))
+				exec_binary(tmp, global);
 		tmp = tmp->next;
 	}
 }
