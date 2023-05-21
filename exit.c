@@ -31,6 +31,7 @@ int	is_num(char *str)
 void    my_exit(char **cmd, global_t *global)
 {
 	int n;
+
 	if (!cmd[1])
 	{
 		n = global->exit_code;
