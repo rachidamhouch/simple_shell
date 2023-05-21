@@ -142,6 +142,7 @@ void _alias(char **cmd, global_t *global)
 	}
 	else
 	{
+		help__alias(cmd, global);
 		while (cmd[i])
 		{
 			if (!alias_search(cmd[i], global) && !is_new(cmd[i]))
@@ -153,6 +154,5 @@ void _alias(char **cmd, global_t *global)
 			}
 			i++;
 		}
-		help__alias(cmd, global);
 	}
 }
