@@ -9,7 +9,7 @@
  */
 char *remove_comments(char *ptr, global_t *global, int fd)
 {
-	int len = 0, i = 0, n = 0;
+	int len = 0, i = 0, n;
 	char    *str;
 
 	if (!ptr)
@@ -17,8 +17,7 @@ char *remove_comments(char *ptr, global_t *global, int fd)
 		global->cmd = NULL;
 		if (isatty(fd))
 			write(1, "\n", 1);
-		else
-			n = global->exit_code;
+		n = global->exit_code;
 		free_all(global);
 		exit(n);
 	}
