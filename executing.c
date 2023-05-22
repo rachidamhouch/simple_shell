@@ -40,13 +40,23 @@ void	exec_binary(command_t *command, global_t *global)
  */
 void	executing(global_t *global)
 {
-	command_t *tmp = global->commands;
+	command_t	*tmp = global->commands;
+	char		**str;
+	id_t		i = 0;
 
 	while (tmp)
 	{
 		if (tmp->args)
+		{
 			if (!exec_builtin(tmp->args, global))
 				exec_binary(tmp, global);
+		}
+		else if (tmp->tmp)
+		{
+			str = advanced_split(tmp->tmp, global);
+			while (str && str[i])
+				printf("%s\n", str[i++]);
+		}
 		tmp = tmp->next;
 	}
 }

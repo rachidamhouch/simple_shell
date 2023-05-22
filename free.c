@@ -15,6 +15,7 @@ void    free_commands(global_t *global)
 		i = 0;
 		tmp2 = tmp->next;
 		free(tmp->path);
+		free(tmp->tmp);
 		str = tmp->args;
 		while (str && str[i])
 			free(str[i++]);

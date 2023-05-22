@@ -15,6 +15,7 @@
  * struct command_s - singly linked list
  * @path: the path.
  * @args: the args.
+ * @tmp: the tmp.
  * @next: points to the next node
  *
  * Description: singly linked list node structure
@@ -24,6 +25,7 @@ typedef struct command_s
 {
 	char		        *path;
 	char		        **args;
+	char				*tmp;
 	struct command_s	*next;
 } command_t;
 
@@ -127,5 +129,7 @@ char	*str_copy1(char	*str, int *index, char a);
 void	_alias(char **cmd, global_t *global);
 char	*alias_search(char	*str, global_t *global);
 alias_t	*aliassearch(char	*str, global_t *global);
+int		is_lo_op(char *str);
+char	**advanced_split(char *str, global_t *global);
 
 #endif

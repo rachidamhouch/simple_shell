@@ -14,7 +14,7 @@ char	*str_copy1(char	*str, int *index, char a)
 	char	*ptr;
 	int		y;
 
-	i = 0;
+	i = *index;
 	start = *index;
 	while (str[i] && str[i] != a)
 	{
