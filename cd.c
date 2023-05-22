@@ -26,6 +26,7 @@ void help_cd(char **cmd, global_t *global)
 			print(": cd: can't cd to ", 2, 0);
 			print(cmd[1], 2, 1);
 			free(tmp);
+			global->exit_code = 2;
 		}
 		else
 		{
@@ -62,6 +63,7 @@ void help_cd2(char **cmd, global_t *global)
 		print(": cd: can't cd to ", 2, 0);
 		print(cmd[1], 2, 1);
 		free(tmp);
+		global->exit_code = 2;
 	}
 	else
 	{
@@ -84,6 +86,7 @@ void cd(char **cmd, global_t *global)
 {
 	char *t[4], *tmp;
 
+	global->exit_code = 0;
 	t[0] = "setenv";
 	t[1] = "PWD";
 	t[3] = NULL;
@@ -100,6 +103,7 @@ void cd(char **cmd, global_t *global)
 				print(": cd: can't cd to ", 2, 0);
 				print(cmd[1], 2, 1);
 				free(tmp);
+				global->exit_code = 2;
 			}
 			else
 			{

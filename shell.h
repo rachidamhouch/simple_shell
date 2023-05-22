@@ -131,5 +131,8 @@ char	*alias_search(char	*str, global_t *global);
 alias_t	*aliassearch(char	*str, global_t *global);
 int		is_lo_op(char *str);
 char	**advanced_split(char *str, global_t *global);
+void	exec_logical_operators(char **str, global_t *global);
+char	*get_path(char *str, global_t *global);
+void	exec_binary(command_t *command, global_t *global);
 
 #endif

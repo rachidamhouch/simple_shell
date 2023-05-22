@@ -8,7 +8,14 @@ void env(char **cmd, global_t *global)
 {
 	env_t *ptr = global->env;
 
-	(void)cmd;
+	if (cmd[1])
+	{
+		print("env: ‘", 2, 0);
+		print(cmd[1], 2, 0);
+		print("’: No such file or directory", 2, 1);
+		global->exit_code = 127;
+		return;
+	}
 	while (ptr)
 	{
 		if (ptr->name)

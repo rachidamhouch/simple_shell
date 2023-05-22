@@ -113,3 +113,43 @@ char **advanced_split(char *str, global_t *global)
 	return (ptr);
 }
 
+void exec_logical_operators(char **str, global_t *global)
+{
+	int		i = 0;
+	char	n = 0, m, v = 1;
+
+	command_t	*node = malloc(sizeof(command_t));
+
+	while (str[i])
+	{
+		str = str + i;
+		i = 0;
+		while (1)
+		{
+			if (!str[i] || !_strncmp(str[i], "||", 3) || !_strncmp(str[i], "&&", 3))
+			{
+				if (str[i] && !_strncmp(str[i], "&&", 3))
+					m = '&';
+				else if (str[i] && !_strncmp(str[i], "||", 3))
+					m = '|';
+				if (!str[i])
+					v = 0;
+				str[i] = NULL;
+				node->path = get_path(str[0], global);
+				node->args = str;
+				if (!n || (n == '|' && global->exit_code) || (n == '&' && !global->exit_code))
+				{
+					if (!exec_builtin(node->args, global))
+						exec_binary(node, global);
+				}
+				free(node->path);
+				n = m;
+				if (v)
+					i++;
+				break;
+			}
+			i++;
+		}
+	}
+	free(node);
+}

@@ -54,6 +54,7 @@ void	executing(global_t *global)
 		else if (tmp->tmp)
 		{
 			str = advanced_split(tmp->tmp, global);
+			exec_logical_operators(str, global);
 			while (str && str[i])
 				free(str[i++]);
 			free(str);
