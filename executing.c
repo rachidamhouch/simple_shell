@@ -55,7 +55,8 @@ void	executing(global_t *global)
 		{
 			str = advanced_split(tmp->tmp, global);
 			while (str && str[i])
-				printf("%s\n", str[i++]);
+				free(str[i++]);
+			free(str);
 		}
 		tmp = tmp->next;
 	}
