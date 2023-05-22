@@ -17,7 +17,8 @@ int	is_lo_op(char *str)
 
 int	count_words(char *str, global_t *global)
 {
-	int	count = 0, c = 1, i =0;
+	int	count = 0, c = 1, i = 0;
+
 	if (str[0] == '|' && str[1] && str[1] == '|')
 	{
 		print(global->name, 2, 0);
@@ -38,8 +39,8 @@ int	count_words(char *str, global_t *global)
 	{
 		if (str[i] == ' ' || str[i] == '\t')
 			c = 1;
-		if ((str[i] == '|' && str [i + 1] && str [i + 1] == '|') ||
-			(str[i] == '&' && str [i + 1] && str [i + 1] == '&'))
+		if ((str[i] == '|' && str[i + 1] && str [i + 1] == '|') ||
+			(str[i] == '&' && str[i + 1] && str [i + 1] == '&'))
 		{
 			c = 1;
 			count++;
@@ -116,10 +117,9 @@ char **advanced_split(char *str, global_t *global)
 void exec_logical_operators(char **str, global_t *global)
 {
 	int		i = 0;
-	char	n = 0, m, v = 1, **tmp = str;
+	char	n = 0, m, v = 1, *tmp = str;
 
 	command_t	*node = malloc(sizeof(command_t));
-	(void)tmp;
 	while (str[i])
 	{
 		str = str + i;
@@ -138,7 +138,8 @@ void exec_logical_operators(char **str, global_t *global)
 				str[i] = NULL;
 				node->path = get_path(str[0], global);
 				node->args = str;
-				if (!n || (n == '|' && global->exit_code) || (n == '&' && !global->exit_code))
+				if (!n || (n == '|' && global->exit_code) ||
+					(n == '&' && !global->exit_code))
 				{
 					if (!exec_builtin(node->args, global))
 						exec_binary(node, global);
@@ -146,10 +147,7 @@ void exec_logical_operators(char **str, global_t *global)
 				free(node->path);
 				n = m;
 				if (v)
-				{
-					str[i] = _strdup("anything");
-					i++;
-				}
+					str[i++] = _strdup("anything");
 				break;
 			}
 			i++;
