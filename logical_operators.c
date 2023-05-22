@@ -39,8 +39,8 @@ int	count_words(char *str, global_t *global)
 	{
 		if (str[i] == ' ' || str[i] == '\t')
 			c = 1;
-		if ((str[i] == '|' && str[i + 1] && str [i + 1] == '|') ||
-			(str[i] == '&' && str[i + 1] && str [i + 1] == '&'))
+		if ((str[i] == '|' && str[i + 1] && str[i + 1] == '|') ||
+			(str[i] == '&' && str[i + 1] && str[i + 1] == '&'))
 		{
 			c = 1;
 			count++;
@@ -118,8 +118,8 @@ void exec_logical_operators(char **str, global_t *global)
 {
 	int		i = 0;
 	char	n = 0, m, v = 1, *tmp = str;
-
 	command_t	*node = malloc(sizeof(command_t));
+
 	while (str[i])
 	{
 		str = str + i;
