@@ -1,5 +1,10 @@
 #include "shell.h"
 
+/**
+ *is_lo_op - con || or &&.
+ *@str: arg 1.
+ *Return: 0 or 1.
+ */
 int	is_lo_op(char *str)
 {
 	int	i = 0;
@@ -15,6 +20,12 @@ int	is_lo_op(char *str)
 	return (0);
 }
 
+/**
+ *count_words - count number of words.
+ *@str: arg 1.
+ *@global: arg 2.
+ *Return: number of words.
+ */
 int	count_words(char *str, global_t *global)
 {
 	int	count = 0, c = 1, i = 0;
@@ -56,6 +67,12 @@ int	count_words(char *str, global_t *global)
 	return (count);
 }
 
+/**
+ *copy_str - dup an new word.
+ *@str: arg 1.
+ *@index: arg 2.
+ *Return: new word.
+ */
 char *copy_str(char *str, int *index)
 {
 	int		i = *index, start, len = 0;
@@ -96,7 +113,12 @@ char *copy_str(char *str, int *index)
 	return (ptr);
 }
 
-
+/**
+ *advanced_split - split words.
+ *@str: arg 1.
+ *@global: arg 2.
+ *Return: array of strings.
+ */
 char **advanced_split(char *str, global_t *global)
 {
 	int		count = count_words(str, global), i = 0, index = 0;
@@ -114,10 +136,15 @@ char **advanced_split(char *str, global_t *global)
 	return (ptr);
 }
 
+/**
+ *exec_logical_operators - exec_logical_operators.
+ *@str: arg 1.
+ *@global: arg 2.
+ */
 void exec_logical_operators(char **str, global_t *global)
 {
 	int		i = 0;
-	char	n = 0, m, v = 1, *tmp = str;
+	char	n = 0, m, v = 1;
 	command_t	*node = malloc(sizeof(command_t));
 
 	while (str[i])
