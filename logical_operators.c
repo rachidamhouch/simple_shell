@@ -116,10 +116,10 @@ char **advanced_split(char *str, global_t *global)
 void exec_logical_operators(char **str, global_t *global)
 {
 	int		i = 0;
-	char	n = 0, m, v = 1;
+	char	n = 0, m, v = 1, **tmp = str;
 
 	command_t	*node = malloc(sizeof(command_t));
-
+	(void)tmp;
 	while (str[i])
 	{
 		str = str + i;
@@ -134,6 +134,7 @@ void exec_logical_operators(char **str, global_t *global)
 					m = '|';
 				if (!str[i])
 					v = 0;
+				free(str[i]);
 				str[i] = NULL;
 				node->path = get_path(str[0], global);
 				node->args = str;
@@ -145,7 +146,10 @@ void exec_logical_operators(char **str, global_t *global)
 				free(node->path);
 				n = m;
 				if (v)
+				{
+					str[i] = _strdup("anything");
 					i++;
+				}
 				break;
 			}
 			i++;
