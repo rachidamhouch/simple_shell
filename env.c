@@ -8,6 +8,7 @@ void env(char **cmd, global_t *global)
 {
 	env_t *ptr = global->env;
 
+	(void)cmd;
 	while (ptr)
 	{
 		if (ptr->name)
