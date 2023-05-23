@@ -77,7 +77,7 @@ void	get_commands(char *ptr, global_t *global)
 		node = malloc(sizeof(command_t));
 		node->path = NULL;
 		node->next = NULL;
-		if (is_lo_op(commands[i]))
+		if (commands[i] && is_lo_op(commands[i]))
 		{
 			node->args = NULL;
 			node->tmp = _strdup(commands[i]);
