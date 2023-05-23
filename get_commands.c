@@ -13,6 +13,8 @@ char	*get_path(char *str, global_t *global)
 
 	if (!access(ptr, F_OK))
 	{
+		if (ptr[0] == '/')
+			return (ptr);
 		if (ptr[0] == '.' && ptr[1] && ptr[1] == '/')
 			return (ptr);
 		else
