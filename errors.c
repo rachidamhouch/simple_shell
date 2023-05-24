@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
- * print_error - Print error message
+ * print_error - Print error message.
  * @cmd: arg 1.
  * @msg: arg 2.
  * @global: arg 3.

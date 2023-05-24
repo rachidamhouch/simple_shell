@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * alias - Implement the alias built-in.
+ * alias - Implements the alias built-in.
  * @ptr: arg 1.
  * @global: arg 2.
  * Return: string or NULL.
@@ -54,7 +54,7 @@ int	is_new(char *str)
 	return (0);
 }
 /**
- * aliassprint - search for an alias
+ * aliassprint - search for an alias.
  * @str: arg 1.
  * @global: arg 2.
  * Return: string or NULL.
@@ -72,7 +72,7 @@ char	*aliassprint(char	*str, global_t *global)
 }
 
 /**
- * help__alias - help _alias function
+ * help__alias - help _alias function.
  * @cmd: arg 1.
  * @global: arg 2.
  */

@@ -12,6 +12,6 @@ void	putnbr_fd(int n, int fd)
 	else
 	{
 		putnbr_fd(n / 10, fd);
-		
+		putnbr_fd(n % 10, fd);
 	}
 }

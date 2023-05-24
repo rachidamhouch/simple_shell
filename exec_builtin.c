@@ -8,7 +8,7 @@
 */
 int	exec_builtin(char **args, global_t *global)
 {
-	char *cmd = args[0];
+	char	*cmd = args[0];
 
 	if (!cmd)
 		return (0);

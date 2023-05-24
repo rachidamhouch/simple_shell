@@ -10,7 +10,7 @@ void handler(int sig)
 }
 
 /**
- *main - main function
+ *main - main function.
  *@ac: The number of arguments
  *@av: Array of argument strings
  *@env: Array of environment string
