@@ -35,3 +35,75 @@ Standard functions and system calls employed in simple_shell include:
 - [ ] handles **&&** and **||**
 - [ ] aliases
 - [ ] variable replacement
+
+### Built-ins
+
+- [x] exit
+- [x] env
+- [ ] setenv
+- [ ] unsetenv
+- [x] cd
+- [ ] help
+- [ ] history
+
+### Examples
+<div id="examples"><div/>
+
+1. Absolute path commands
+- non interactive
+```bash
+$ echo "/bin/pwd" | ./hsh
+$ /home/timex/simple_shell
+```
+- interactive mode
+``` bash
+$ ./hsh
+./hsh$ /bin/echo hello world
+helo world
+./hsh$ exit
+$
+```
+2. short command
+- non interactive
+```bash
+$ echo "pwd" | ./hsh
+$ /home/timex/simple_shell
+```
+- interactive mode
+``` bash
+$ ./hsh
+./hsh$ echo hello world
+helo world
+./hsh$ exit
+$
+```
+3. built-ins
+- non interactive
+```bash
+$ echo "exit" | ./hsh
+$ echo $?
+0
+```
+- interactive mode
+``` bash
+$ ./hsh
+./hsh$ exit 98
+$ echo $?
+98
+```
+
+**Some error output**
+``` bash
+$ ./hsh
+./hsh$ ls /non_existing_folder
+ls: cannot access '/non_existing_folder': No such file or directory
+./hsh$ exit
+$ echo $?
+2
+```
+``` bash
+$ echo "non_valid_command" | ./hsh
+./hsh: 1: non_valid_command: not found
+$ echo $?
+127
+```
