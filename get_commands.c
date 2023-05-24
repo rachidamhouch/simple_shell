@@ -15,6 +15,8 @@ char	*get_path(char *str, global_t *global)
 	{
 		if (ptr[0] == '/' || (ptr[0] == '.'))
 			return (ptr);
+		else if(env_search("PATH", global) == env_search("PWD", global))
+			return (ptr);
 		else
 		{
 			free(ptr);
