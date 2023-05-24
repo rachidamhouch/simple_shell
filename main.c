@@ -37,6 +37,8 @@ int main(int ac, char **av, char **env)
 			return (127);
 		}
 	}
+	if (!env)
+		exit(-100);
 	init_env(env, global);
 	while (1)
 	{

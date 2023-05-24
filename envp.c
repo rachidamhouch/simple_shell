@@ -43,7 +43,7 @@ void	init_env(char **envp, global_t *global)
 
 	i = 0;
 	head = NULL;
-	while (envp && envp[i])
+	while (envp[i])
 	{
 		index = 0;
 		env = malloc(sizeof(env_t));
