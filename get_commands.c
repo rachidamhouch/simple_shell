@@ -14,13 +14,10 @@ char *help_get_path(char *ptr, global_t *global)
 	str2 = env_search("PWD", global);
 	if (ptr[0] == '/' || (ptr[0] == '.'))
 		return (ptr);
-	else if(_strncmp(str1, str2, _strlen(str1) + 1))
+	else if (_strncmp(str1, str2, _strlen(str1) + 1))
 		return (ptr);
-	else
-	{
-		free(ptr);
-		return (NULL);
-	}
+	free(ptr);
+	return (NULL);
 }
 
 /**
