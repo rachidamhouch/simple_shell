@@ -53,8 +53,9 @@ void    my_exit(char **cmd, global_t *global)
 		}
 		else
 		{
+			n = _atoi(cmd[1]);
 			free_all(global);
-			exit((unsigned char)_atoi(cmd[1]));
+			exit((unsigned char)n);
 		}
 	}
 }
