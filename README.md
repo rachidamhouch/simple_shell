@@ -77,19 +77,7 @@ helo world
 ./hsh$ exit
 $
 ```
-3. built-ins
-- non interactive
-```bash
-$ echo "exit" | ./hsh
-$ echo $?
-0
-```
-- interactive mode
-``` bash
-$ ./hsh
-./hsh$ exit 98
-$ echo $?
-98
+3
 ```
 
 
