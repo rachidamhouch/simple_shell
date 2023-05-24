@@ -26,7 +26,7 @@ int main(int ac, char **av, char **env)
 	global->name = av[0];
 	if (ac > 1)
 	{
-		fd = open(av[1], O_RDONLY);
+		fd = open(av[1], O_CREAT, S_IRUSR | S_IWUSR);
 		if (fd == -1)
 		{
 			print(global->name, 2, 0);
