@@ -22,32 +22,6 @@ Standard functions and system calls employed in simple_shell include:
    ```sh
    access, execve, exit, fork, free, malloc, read, signal, wait, write.
    ```
-### Features
-- [x] uses the PATH
-- [x] implements builtins
-- [x] handles command line arguments
-- [x] custom strtok function
-- [x] uses exit status
-- [x] shell continues upon Crtl+C (**^C**)
-- [x] handles comments (#)
-- [x] handles **;**
-- [x] custom getline type function
-- [ ] handles **&&** and **||**
-- [ ] aliases
-- [ ] variable replacement
-
-### Built-ins
-
-- [x] exit
-- [x] env
-- [ ] setenv
-- [ ] unsetenv
-- [x] cd
-- [ ] help
-- [ ] history
-
-
-
 
 
 3
