@@ -92,18 +92,6 @@ $ echo $?
 98
 ```
 
-**Some error output**
-``` bash
-$ ./hsh
-./hsh$ ls /non_existing_folder
-ls: cannot access '/non_existing_folder': No such file or directory
-./hsh$ exit
-$ echo $?
-2
-```
-``` bash
-$ echo "non_valid_command" | ./hsh
-./hsh: 1: non_valid_command: not found
-$ echo $?
-127
+
+
 ```
