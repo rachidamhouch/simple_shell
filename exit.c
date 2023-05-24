@@ -52,6 +52,6 @@ void    my_exit(char **cmd, global_t *global)
 			global->exit_code = 2;
 		}
 		else
-			exit(_atoi(cmd[1]));
+			exit((unsigned char)_atoi(cmd[1]));
 	}
 }
