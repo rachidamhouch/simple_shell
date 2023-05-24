@@ -1,6 +1,29 @@
 #include "shell.h"
 
 /**
+ *help_get_path - help the get_path function.
+ *@ptr: arg 1.
+ *@global: arg 2.
+ *Return: The Path of the command.
+ */
+char *help_get_path(char *ptr, global_t *global)
+{
+	char	*str1, *str2;
+
+	str1 = env_search("PATH", global);
+	str2 = env_search("PWD", global);
+	if (ptr[0] == '/' || (ptr[0] == '.'))
+		return (ptr);
+	else if(_strncmp(str1, str2, _strlen(str1) + 1))
+		return (ptr);
+	else
+	{
+		free(ptr);
+		return (NULL);
+	}
+}
+
+/**
  *get_path - Get the path of a command.
  *@str: arg 1.
  *@global: arg 2.
@@ -12,17 +35,7 @@ char	*get_path(char *str, global_t *global)
 	int		i = 0;
 
 	if (!access(ptr, F_OK))
-	{
-		if (ptr[0] == '/' || (ptr[0] == '.'))
-			return (ptr);
-		else if(env_search("PATH", global) == env_search("PWD", global))
-			return (ptr);
-		else
-		{
-			free(ptr);
-			return (NULL);
-		}
-	}
+		return (help_get_path(ptr, global));
 	paths = split(env_search("PATH", global), ':');
 	if (!paths)
 		return (0);
