@@ -15,7 +15,7 @@ void env(char **cmd, global_t *global)
 		{
 			print(ptr->name, 1, 0);
 			print("=", 1, 0);
-			print(ptr>value, 1, 1);
+			print(ptr->value, 1, 1);
 		}
 		ptr = ptr->next;
 	}
