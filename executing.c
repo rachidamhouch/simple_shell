@@ -7,8 +7,8 @@
  */
 void	exec_binary(command_t *command, global_t *global)
 {
-	pid_t	n;
-	int		m;
+	pid_t n;
+	int	m;
 
 	if (!command->path)
 	{
