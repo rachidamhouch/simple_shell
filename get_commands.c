@@ -13,7 +13,8 @@ char	*get_path(char *str, global_t *global)
 
 	if (!access(ptr, F_OK))
 	{
-		if (ptr[0] == '/' || (ptr[0] == '.' && ptr[1] == '/'))
+		if (ptr[0] == '/' || (ptr[0] == '.' && ptr[1] == '/') ||
+			(ptr[0] == '.' && ptr[1] == '.' && ptr[2] == '/'))
 			return (ptr);
 	}
 	paths = split(env_search("PATH", global), ':');
