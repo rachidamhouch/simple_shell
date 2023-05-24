@@ -63,7 +63,7 @@ void help_cd2(char **cmd, global_t *global)
 		print(": cd: can't cd to ", 2, 0);
 		print(cmd[1], 2, 1);
 		free(tmp);
-		global->exit_code = 2;
+		global>exit_code = 2;
 	}
 	else
 	{
