@@ -9,7 +9,7 @@ int	is_num(char *str)
 {
 	int i = 0;
 
-	if (str[0] == '+')
+	if (str[0] && (str[0] == '-' || str[0] == '+'))
 		i++;
 	if (!str[i])
 		return (0);
@@ -42,7 +42,7 @@ void    my_exit(char **cmd, global_t *global)
 	}
 	else
 	{
-		if (!is_num(cmd[1]))
+		if (!is_num(cmd[1]) || _atoi(cmd[1]) < 0)
 		{
 			print(global->name, 2, 0);
 			print(": ", 2, 0);
