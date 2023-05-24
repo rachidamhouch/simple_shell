@@ -150,7 +150,7 @@ void _alias(char **cmd, global_t *global)
 				print("alias: ", 2, 0);
 				print(cmd[i], 2, 0);
 				print(" not found", 2, 1);
-				global>exit_code = 1;
+				global->exit_code = 1;
 			}
 			i++;
 		}
