@@ -15,11 +15,9 @@ A simple UNIX command interpreter that provides a user interface to access and g
 
 >>and Learning how to learn
 
-## Table of Contents
-* [Description](#description)
-* [File Structure](#file-structure)
-* [Requirements](#requirements)
-* [Installation](#installation)
-* [Usage](#usage)
-* [Example of Use](#example-of-use)
-* [Bugs](#bugs)
+## Description
+This is a command line interpreter, or shell, in the tradition of the first Unix shell written by Ken Thompson in 1971. This was made as a project for Holberton School. In this project we apply the knowledge that we have learned in C programming language.
+Standard functions and system calls employed in simple_shell include:
+   ```sh
+   access, execve, exit, fork, free, malloc, read, signal, wait, write.
+   ```
