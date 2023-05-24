@@ -54,7 +54,7 @@ int	is_new(char *str)
 	return (0);
 }
 /**
- * aliassprint - search for an alias.
+ * aliassprint - search for an alias
  * @str: arg 1.
  * @global: arg 2.
  * Return: string or NULL.
