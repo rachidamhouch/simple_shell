@@ -37,6 +37,10 @@ int	exec_builtin(char **args, global_t *global)
 		_unsetenv(args, global);
 		return (1);
 	}
-	
+	else if (!_strncmp("alias", cmd, _strlen("alias") + 1))
+	{
+		_alias(args, global);
+		return (1);
+	}
 	return (0);
 }
