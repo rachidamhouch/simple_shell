@@ -14,3 +14,12 @@ A simple UNIX command interpreter that provides a user interface to access and g
 >>Group work
 
 >>and Learning how to learn
+
+## Table of Contents
+* [Description](#description)
+* [File Structure](#file-structure)
+* [Requirements](#requirements)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Example of Use](#example-of-use)
+* [Bugs](#bugs)
