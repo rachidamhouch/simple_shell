@@ -73,5 +73,6 @@ void free_all(global_t *global)
 	free_alias(global);
 	free(global->cmd);
 	free(global->left);
+	close(global->fd);
 	free(global);
 }

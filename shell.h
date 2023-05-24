@@ -73,6 +73,7 @@ typedef struct env_s
  * @cmd: the cmd.
  * @left: the left.
  * @n: the line num.
+ * @fd: the fd.
  *
  * Description: global variable.
  */
@@ -88,6 +89,7 @@ typedef struct global_s
 	char		*cmd;
 	char		*left;
 	int			n;
+	int			fd;
 } global_t;
 
 # define BUFFER_SIZE 1024
