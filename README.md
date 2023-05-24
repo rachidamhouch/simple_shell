@@ -46,22 +46,8 @@ Standard functions and system calls employed in simple_shell include:
 - [ ] help
 - [ ] history
 
-### Examples
-<div id="examples"><div/>
 
-1. Absolute path commands
-- non interactive
-```bash
-$ echo "/bin/pwd" | ./hsh
-$ /home/timex/simple_shell
-```
-- interactive mode
-``` bash
-$ ./hsh
-./hsh$ /bin/echo hello world
-helo world
-./hsh$ exit
-$
+
 
 
 3
