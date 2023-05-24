@@ -27,7 +27,7 @@ int	is_num(char *str)
 
 /**
  * my_exit - exit the shell.
- * @cmd: arg 1;
+ * @cmd: arg 1.
  * @global: arg 2.
  */
 void    my_exit(char **cmd, global_t *global)
