@@ -72,7 +72,7 @@ char	*aliassprint(char	*str, global_t *global)
 }
 
 /**
- * help__alias - help _alias function.
+ * help__alias - help _alias function
  * @cmd: arg 1.
  * @global: arg 2.
  */
