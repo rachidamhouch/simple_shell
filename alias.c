@@ -89,7 +89,7 @@ void help__alias(char **cmd, global_t *global)
 			index = 0;
 			str1 = str_copy1(cmd[i], &index, '=');
 			index++;
-			str2 = _strdup("test");
+			str2 = _strdup(cmd[i] + index);
 			if (aliassearch(str1, global))
 			{
 				node = aliassearch(str1, global);
