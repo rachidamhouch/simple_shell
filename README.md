@@ -62,21 +62,8 @@ $ ./hsh
 helo world
 ./hsh$ exit
 $
-```
-2. short command
-- non interactive
-```bash
-$ echo "pwd" | ./hsh
-$ /home/timex/simple_shell
-```
-- interactive mode
-``` bash
-$ ./hsh
-./hsh$ echo hello world
-helo world
-./hsh$ exit
-$
-```
+
+
 3
 ```
 
