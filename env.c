@@ -6,14 +6,14 @@
  */
 void env(char **cmd, global_t *global)
 {
-	int	i = 0;
-	char **str = global->envp;
+	int i;
 
 	(void)cmd;
-	while (str[i])
+	(void)global;
+	for (i = 0; environ[i] != NULL; i++)
 	{
-		print(str[i], 1, 1);
-		i++;
+		write(1, environ[i], strlen(environ[i]));
+		write(1, "\n", 1);
 	}
 	global->exit_code = 0;
 }

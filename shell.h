@@ -134,5 +134,5 @@ char	**advanced_split(char *str, global_t *global);
 void	exec_logical_operators(char **str, global_t *global);
 char	*get_path(char *str, global_t *global);
 void	exec_binary(command_t *command, global_t *global);
-
+extern char **environ;
 #endif
