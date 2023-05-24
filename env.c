@@ -6,18 +6,14 @@
  */
 void env(char **cmd, global_t *global)
 {
-	env_t *ptr = global->env;
+	int	i = 0;
+	char **str = global->envp;
 
 	(void)cmd;
-	while (ptr)
+	while (str[i])
 	{
-		if (ptr->name)
-		{
-			print(ptr->name, 1, 0);
-			print("=", 1, 0);
-			print(ptr->value, 1, 1);
-		}
-		ptr = ptr->next;
+		print(str[i], 1, 1);
+		i++;
 	}
 	global->exit_code = 0;
 }
